@@ -83,12 +83,13 @@ export default function SlideLayout({
             {intro && (
                 <Box
                     sx={{
-                        position: "absolute",
-                        top: { xs: "10%", md: "5%" },
-                        right: { xs: "5%", md: "8%" },
+                        position: {xs: "relative", md: "absolute"},
+                        top: { xs: "auto", md: "5%" },
+                        right: { xs: "auto", md: "8%" },
+                        left: { xs: "5%", md: "auto" },
                         maxWidth: 350,
                         fontFamily: "'Permanent Marker', cursive",
-                        fontSize: { xs: "5vw", md: "1.2rem" },
+                        fontSize: "1.2rem",
                         lineHeight: 1.4,
                         color: "text.primary",
                         bgcolor: "#FFD966",

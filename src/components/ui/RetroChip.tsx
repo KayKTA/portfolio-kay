@@ -52,9 +52,9 @@ const RetroChip = ({item}: {item: chip}) => {
                 borderColor: "primary.main",
                 borderRadius: 1,
                 bgcolor: "background.paper",
-                height: 40,
+                height: 30,
                 fontWeight: 700,
-                "& .MuiChip-label": { px: 1 },
+                "& .MuiChip-label": { px: 1, display: "flex", alignItems: "center", gap: 0.5},
             }}
         />
     )

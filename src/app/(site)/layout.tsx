@@ -2,7 +2,7 @@ import ThemeRegistry from '@/lib/ThemeRegistry'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kay – Portfolio',
+  title: 'Kay | Portfolio',
   description: 'Full-Stack | Data Viz | Impact',
 }
 

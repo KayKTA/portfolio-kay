@@ -6,7 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 
 import Hero from '@/components/sections/Hero'
-// import Education from '@/components/sections/Education'
+import Education from '@/components/sections/Education'
 // import Experience from '@/components/sections/Experiences'
 import Skills from '@/components/sections/Skills'
 import Contact from '@/components/sections/Contact'
@@ -15,7 +15,7 @@ export default function HomePage() {
     const slides = useMemo(
         () => [
             <Hero key="hero" />,
-            //   <Education key="edu" />,
+              <Education key="edu" />,
             //   <Experience key="xp" />,
             <Skills key="skills" />,
             <Contact

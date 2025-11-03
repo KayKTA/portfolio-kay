@@ -36,20 +36,20 @@ export function LevelTokens({ value, showPercent = false }: TokensProps) {
         <Stack direction="row" spacing={1} alignItems="center" sx={{ minWidth: 120 }}>
             <Stack direction="row" spacing={0.75}>
                 {Array.from({ length: 10 }).map((_, i) => {
-                const state = i < filled ? "full" : "empty";
-                return (
-                    <Box
-                    key={i}
-                    sx={{
-                        width: 14,
-                        height: 14,
-                        borderRadius: "50%",
-                        border: "2px solid",
-                        borderColor: "primary.main",
-                        bgcolor: state === "full" ? "primary.main" : "transparent",
-                    }}
-                    />
-                );
+                    const state = i < filled ? "full" : "empty";
+                    return (
+                        <Box
+                            key={i}
+                            sx={{
+                                width: 14,
+                                height: 14,
+                                borderRadius: "50%",
+                                border: "2px solid",
+                                borderColor: "primary.main",
+                                bgcolor: state === "full" ? "primary.main" : "transparent",
+                            }}
+                        />
+                    );
                 })}
             </Stack>
             {showPercent && (
