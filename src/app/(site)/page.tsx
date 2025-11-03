@@ -7,8 +7,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 
 import Hero from '@/components/sections/Hero'
 // import Education from '@/components/sections/Education'
-// import Skills from '@/components/sections/Skills'
 // import Experience from '@/components/sections/Experiences'
+import Skills from '@/components/sections/Skills'
 import Contact from '@/components/sections/Contact'
 
 export default function HomePage() {
@@ -18,7 +18,7 @@ export default function HomePage() {
       <Hero key="hero" />,
     //   <Education key="edu" />,
     //   <Experience key="xp" />,
-    //   <Skills key="skills" />,
+      <Skills key="skills" />,
       <Contact
         key="contact"
         phone="+33 6 24 38 63 84"
