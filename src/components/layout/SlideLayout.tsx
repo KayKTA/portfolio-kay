@@ -33,16 +33,16 @@ export default function SlideLayout({
             <Box
                 aria-hidden
                 sx={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 0,
-                pointerEvents: "none",
-                backgroundImage: `
-                    linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)
-                `,
-                backgroundSize: "56px 56px",
-                opacity: 0.15,
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 0,
+                    pointerEvents: "none",
+                    backgroundImage: `
+                        linear-gradient(to right, rgba(0,0,0,0.2) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0,0,0,0.2) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "56px 56px",
+                    opacity: 0.15,
                 }}
             />
 
