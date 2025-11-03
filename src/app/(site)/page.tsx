@@ -9,7 +9,7 @@ import Hero from '@/components/sections/Hero'
 // import Education from '@/components/sections/Education'
 // import Skills from '@/components/sections/Skills'
 // import Experience from '@/components/sections/Experiences'
-// import Contact from '@/components/sections/Contact'
+import Contact from '@/components/sections/Contact'
 
 export default function HomePage() {
   // Compiler React gère déjà beaucoup d'optimisations → ce useMemo est optionnel
@@ -19,13 +19,13 @@ export default function HomePage() {
     //   <Education key="edu" />,
     //   <Experience key="xp" />,
     //   <Skills key="skills" />,
-    //   <Contact
-    //     key="contact"
-    //     phone="+33 6 24 38 63 84"
-    //     email="kaniba.keita93@gmail.com"
-    //     linkedin="https://www.linkedin.com/in/kaniba-keita"
-    //     github="https://github.com/KayKTA"
-    //   />,
+      <Contact
+        key="contact"
+        phone="+33 6 24 38 63 84"
+        email="kaniba.keita93@gmail.com"
+        linkedin="https://www.linkedin.com/in/kaniba-keita"
+        github="https://github.com/KayKTA"
+      />,
     ],
     []
   )

@@ -29,7 +29,7 @@ export default function SlideLayout({
                 flexDirection: "column",
             }}
         >
-            {/* Quadrillage de fond
+            {/* Quadrillage de fond */}
             <Box
                 aria-hidden
                 sx={{
@@ -44,7 +44,7 @@ export default function SlideLayout({
                 backgroundSize: "56px 56px",
                 opacity: 0.15,
                 }}
-            /> */}
+            />
 
             {/* Titre + sous-titre */}
             <Box sx={{ position: "relative", zIndex: 10, p: { xs: 2, md: 4 } }}>
