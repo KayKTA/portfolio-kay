@@ -1,6 +1,7 @@
-import { Box, Grid, Typography, Stack, Chip } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import { SimpleChip } from "../ui/RetroChip";
+import { SimpleChip } from "@/components/ui/RetroChip";
+import BaseRetroCard from "@/components/ui/BaseRetroCard";
 
 type Formation = {
     year: string;
@@ -78,130 +79,29 @@ const FORMATIONS: Formation[] = [
 
 function FormationCard({ formation }: { formation: Formation }) {
     return (
-        <Box
-            sx={{
-                border: "4px solid #AE2B1F",
-                borderRadius: 1,
-                bgcolor: "background.default",
-                p: 2,
-                height: "100%",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                gap: 1.2,
-            }}
-        >
-            {/* Badge NEW */}
-            {formation.isNew && (
-                <Box
-                    sx={{
-                        position: "absolute",
-                        top: -14,
-                        right: -14,
-                        bgcolor: "#AE2B1F",
-                        color: "white",
-                        fontWeight: 900,
-                        fontSize: "0.75rem",
-                        px: 1.5,
-                        py: 0.5,
-                        borderRadius: "50%",
-                        transform: "rotate(-10deg)",
-                    }}
-                >
-                    NEW
-                </Box>
-            )}
-
-            {/* Header : logo + titre */}
-            <Stack direction="row" spacing={2} alignItems="center">
-                {formation.logo && (
+        <BaseRetroCard
+            badge={formation.isNew ? { text: "NEW" } : undefined}
+            header={{
+                logo: formation.logo,
+                logoAlt: formation.title,
+                title: formation.title,
+                meta: formation.year,
+                subtitle: (
                     <Box
-                        component="img"
-                        src={formation.logo}
-                        alt={formation.title}
+                        component="span"
                         sx={{
-                            width: 52,
-                            height: 52,
-                            objectFit: "contain",
-                            // filter: "grayscale(100%) contrast(1.2)",
-                        }}
-                    />
-                )}
-                <Stack sx={{ flex: 1 }} spacing={1}>
-                    <Stack direction="row" justifyContent="space-between" alignItems="baseline">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                fontWeight: 900,
-                                textTransform: "uppercase",
-                                color: "primary.main",
-                                lineHeight: 1.1,
-                            }}
-                        >
-                            {formation.title}
-                        </Typography>
-                        <Typography
-                            variant="h6"
-                            // color="text.secondary"
-                            sx={{
-                                fontWeight: 900,
-                                textTransform: "uppercase",
-                                color: "primary.main",
-                                lineHeight: 1.1,
-                            }}
-                        >
-                            {formation.year}
-                        </Typography>
-                    </Stack>
-                    <Typography
-                        variant="body2"
-                        sx={{
-                            fontWeight: 700,
-                            color: "text.primary",
                             borderBottom: "2px solid #AE2B1F",
                             pb: 0.5,
+                            display: "inline-block",
                         }}
                     >
                         {formation.school}
-                    </Typography>
-                </Stack>
-            </Stack>
-
-            {/* Intro */}
-            {formation.intro && (
-                <Typography variant="body2" sx={{ fontWeight: 700, color: "text.primary" }}>
-                    {formation.intro}
-                </Typography>
-            )}
-
-            {/* Description */}
-            {formation.description && (
-                // <Typography variant="body2" sx={{ color: "text.secondary", lineHeight: 1.5 }}>
-                //   {formation.description}
-                // </Typography>
-                <Stack spacing={0.5} sx={{ mt: 1, flex: 1 }} useFlexGap>
-                    {formation.description.map((desc, i) => (
-                        <Typography
-                            key={i}
-                            variant="body2"
-                            sx={{
-                                color: "text.secondary",
-                                fontSize: "0.85rem",
-                                "&:before": {
-                                    content: '"★"',
-                                    color: "#AE2B1F",
-                                    fontWeight: 900,
-                                    display: "inline-block",
-                                    width: "1.2em",
-                                },
-                            }}
-                        >
-                            {" "}{desc}
-                        </Typography>
-                    ))}
-                </Stack>
-            )}
-
+                    </Box>
+                ),
+            }}
+            intro={formation.intro}
+            bullets={formation.description}
+        >
             {/* Badges techno */}
             {formation.techs?.length ? (
                 <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: "auto" }} useFlexGap>
@@ -210,7 +110,7 @@ function FormationCard({ formation }: { formation: Formation }) {
                     ))}
                 </Stack>
             ) : null}
-        </Box>
+        </BaseRetroCard>
     );
 }
 

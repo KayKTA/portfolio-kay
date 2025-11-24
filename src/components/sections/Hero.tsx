@@ -1,13 +1,12 @@
-// src/components/slides/HomeSlide.tsx
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import SlideLayout from "@/components/layout/SlideLayout";
 import CodeTyper from "@/components/common/CodeTyper";
 
 const SNIPPET = `for (let idea of projects) {
-  construire(idea);
-  tester(idea);
-  améliorer(idea);
+  build(idea);
+  test(idea);
+  enhance(idea);
 }`;
 
 export default function Hero() {

@@ -17,6 +17,7 @@ export default function RetroCard(props: { title: string; icon?: React.ReactNode
                 ...props.sx,
             }}
         >
+            {/* Header : icon + titre */}
             <Stack direction="row" spacing={1.5} alignItems="center">
                 {props.icon}
                 <Typography

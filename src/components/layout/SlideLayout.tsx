@@ -21,8 +21,9 @@ export default function SlideLayout({
             sx={{
                 position: "relative",
                 width: "100vw",
-                height: "100vh",
-                overflow: "hidden",
+                minHeight: "100vh",
+                height: { xs: "auto", md: "100vh" },
+                overflow: { xs: "auto", md: "hidden" },
                 bgcolor: "background.default",
                 color: "text.primary",
                 display: "flex",
@@ -120,7 +121,8 @@ export default function SlideLayout({
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    py: 3,
+                    py: { xs: 3, md: 3 },
+                    pb: { xs: 6, md: 3 }, // padding bottom plus grand sur mobile pour éviter le chevauchement
                 }}
             >
                 {children}

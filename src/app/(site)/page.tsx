@@ -7,7 +7,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 
 import Hero from '@/components/sections/Hero'
 import Education from '@/components/sections/Education'
-// import Experience from '@/components/sections/Experiences'
+import Experience from '@/components/sections/Experiences'
 import Skills from '@/components/sections/Skills'
 import Contact from '@/components/sections/Contact'
 
@@ -15,9 +15,9 @@ export default function HomePage() {
     const slides = useMemo(
         () => [
             <Hero key="hero" />,
-              <Education key="edu" />,
-            //   <Experience key="xp" />,
             <Skills key="skills" />,
+            <Experience key="xp" />,
+            <Education key="edu" />,
             <Contact
                 key="contact"
                 phone="+33 6 24 38 63 84"
@@ -127,8 +127,8 @@ export default function HomePage() {
                         '&:disabled': { opacity: 0.2 },
                         '& svg': { fontSize: 40, animation: 'pulseLeft 1.2s infinite ease-in-out' },
                         '@keyframes pulseLeft': {
-                        '0%, 100%': { transform: 'translateX(0)' },
-                        '50%': { transform: 'translateX(-6px)' },
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '50%': { transform: 'translateX(-6px)' },
                         },
                     }}
                 >
