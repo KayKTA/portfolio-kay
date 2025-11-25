@@ -171,7 +171,7 @@ export default function Contact({
                                 }}
                             >
                                 utiles, belles et bien pensées
-                            </Box>, tout en évoluant
+                            </Box> tout en évoluant
                             progressivement vers un rôle de{" "}
                             <Box
                                 component="span"
