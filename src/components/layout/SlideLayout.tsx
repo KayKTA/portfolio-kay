@@ -30,7 +30,7 @@ export default function SlideLayout({
                 flexDirection: "column",
             }}
         >
-            {/* Quadrillage de fond */}
+            {/* Quadrillage de fond + patterns */}
             <Box
                 aria-hidden
                 sx={{
@@ -39,43 +39,61 @@ export default function SlideLayout({
                     zIndex: 0,
                     pointerEvents: "none",
                     backgroundImage: `
-                        linear-gradient(to right, rgba(0,0,0,0.2) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(0,0,0,0.2) 1px, transparent 1px)
+                        linear-gradient(to right, rgba(196,30,58,0.15) 2px, transparent 2px),
+                        linear-gradient(to bottom, rgba(196,30,58,0.15) 2px, transparent 2px)
                     `,
-                    backgroundSize: "56px 56px",
-                    opacity: 0.15,
+                    backgroundSize: "60px 60px",
+                    opacity: 0.4,
                 }}
             />
 
             {/* Titre + sous-titre */}
             <Box sx={{ position: "relative", zIndex: 10, p: { xs: 2, md: 4 } }}>
+                {/* Titre principal en rouge */}
                 <Typography
                     variant="h1"
                     sx={{
-                        fontSize: { xs: "14vw", md: "8vw" },
+                        fontSize: { xs: "15vw", md: "9vw" },
                         fontWeight: 900,
-                        lineHeight: 0.95,
+                        lineHeight: 0.9,
                         textTransform: "uppercase",
-                        letterSpacing: -1,
+                        letterSpacing: { xs: -2, md: -3 },
+                        color: "primary.main",
+                        textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
                     }}
                 >
                     {title}
                 </Typography>
 
+                {/* Sous-titre avec fond rouge */}
                 {subtitle && (
-                    <Typography
-                        variant="h4"
+                    <Box
                         sx={{
-                            fontSize: { xs: "4.2vw", md: "2.2vw" },
-                            fontWeight: 700,
-                            mt: 0.5,
-                            textTransform: "uppercase",
-                            color: "primary.main",
-                            letterSpacing: 1,
+                            display: "inline-block",
+                            bgcolor: "primary.main",
+                            px: { xs: 2, md: 3 },
+                            py: { xs: 0.75, md: 1 },
+                            mt: { xs: 1, md: 1.5 },
+                            position: "relative",
+
                         }}
                     >
-                        {subtitle}
-                    </Typography>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                fontSize: { xs: "4.5vw", md: "2.5vw" },
+                                fontWeight: 900,
+                                textTransform: "uppercase",
+                                color: "background.default",
+                                // WebkitTextStroke: "1px #F5ECD7",
+                                letterSpacing: { xs: 2, md: 3 },
+                                position: "relative",
+                                zIndex: 1,
+                            }}
+                        >
+                            {subtitle}
+                        </Typography>
+                    </Box>
                 )}
 
                 {headerExtra}

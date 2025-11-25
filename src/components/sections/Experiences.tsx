@@ -18,7 +18,7 @@ const EXPERIENCES: Experience[] = [
   {
     company: "MyJouleBox",
     role: "Développeuse Fullstack JavaScript",
-    period: "2018 — 2024",
+    period: "2018 - 2024",
     location: "Paris",
     tagline: "Startup spécialisée dans l’énergie solaire hors-réseau en Afrique",
     bullets: [
@@ -28,13 +28,13 @@ const EXPERIENCES: Experience[] = [
       "Collaboration étroite avec les équipes locales : remontées du terrain, correction de bugs, qualification et priorisation des besoins.",
       "Encadrement : participation au recrutement et formation de stagiaires développeur·ses.",
     ],
-    stack: ["React", "Node.js", "Go", "Couchbase", "React Native", "Git", "Docker"],
-    logo: "/logos/myjoulebox.svg",
+    stack: ["React", "Node.js", "Go", "Couchbase", "React Native", "Git"],
+    logo: "/logos/mjb.jpeg",
     featured: true,
   },
   {
     company: "MyJouleBox",
-    role: "Développeuse Web — Stage",
+    role: "Développeuse Web | Stage",
     period: "2018",
     location: "Paris",
     bullets: [
@@ -43,19 +43,19 @@ const EXPERIENCES: Experience[] = [
       "Maintenance et support d’une application mobile (React Native).",
     ],
     stack: ["React", "React Native", "JavaScript", "Git"],
-    logo: "/logos/myjoulebox.svg",
+    logo: "/logos/mjb.jpeg",
   },
   {
-    company: "Accueil de loisirs Jeunes de St Médard",
+    company: "Accueil de loisirs St Médard",
     role: "Coordinatrice des Activités",
-    period: "2014 — 2016",
+    period: "2014 - 2016",
     bullets: [
-      "Organisation d’activités",
+    //   "Organisation d’activités",
       "Coordination d’équipe",
       "Gestion de planning et de budgets.",
     ],
     stack: ["Gestion", "Organisation", "Encadrement"],
-    logo: "/logos/medard.svg",
+    logo: "/logos/mjsm.png",
   },
 ];
 
@@ -66,7 +66,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
             header={{
                 logo: experience.logo,
                 logoAlt: experience.company,
-                logoFilter: "grayscale(100%) contrast(1.2)",
+                // logoFilter: "grayscale(100%) contrast(1.2)",
                 title: experience.role,
                 subtitle: `${experience.company} • ${experience.period}${experience.location ? ` • ${experience.location}` : ""}`,
             }}
@@ -105,13 +105,13 @@ export default function ExperienceSlide() {
     const others = EXPERIENCES.filter((e) => e !== featured);
 
     return (
-        <SlideLayout title="Expériences" subtitle="Fullstack • JS • Produit">
+        <SlideLayout title="Expériences" subtitle="Fullstack • Startups">
             <Box
                 sx={{
                     width: "100%",
                     maxWidth: 1200,
                     display: "grid",
-                    gridTemplateColumns: { xs: "1fr", md: "1.3fr 0.7fr" },
+                    gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
                     gap: { xs: 2, md: 3 },
                     alignItems: "stretch",
                 }}

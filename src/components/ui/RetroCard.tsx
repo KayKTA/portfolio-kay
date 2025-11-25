@@ -5,15 +5,22 @@ export default function RetroCard(props: { title: string; icon?: React.ReactNode
     return (
         <Box
             sx={{
-                border: "4px solid",
+                border: "6px solid",
                 borderColor: "primary.main",
                 bgcolor: "background.default",
-                borderRadius: 1,
-                p: { xs: 2, md: 3 },
+                borderRadius: 0,
+                p: { xs: 2.5, md: 3 },
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 gap: 2,
+                boxShadow: "8px 8px 0 rgba(0,0,0,0.2)",
+                // Texture de fond vintage
+                backgroundImage: `
+                    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px),
+                    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px)
+                `,
+                backgroundSize: "20px 20px",
                 ...props.sx,
             }}
         >

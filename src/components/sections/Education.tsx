@@ -118,6 +118,7 @@ export default function EducationRetroSlide() {
     return (
         <SlideLayout
             title="Formations"
+            subtitle="Développeur Web • Data Science • IA"
             intro="J’ai commencé à coder en autodidacte puis j’ai consolidé mes compétences à travers différentes formations intensives"
         >
             <Box sx={{ width: "100%", maxWidth: 1100 }}>

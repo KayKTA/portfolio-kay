@@ -16,8 +16,8 @@ export default function HomePage() {
         () => [
             <Hero key="hero" />,
             <Skills key="skills" />,
-            <Experience key="xp" />,
             <Education key="edu" />,
+            <Experience key="xp" />,
             <Contact
                 key="contact"
                 phone="+33 6 24 38 63 84"

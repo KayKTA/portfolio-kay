@@ -49,16 +49,23 @@ export default function BaseRetroCard({
     return (
         <Box
             sx={{
-                border: "4px solid",
+                border: "6px solid",
                 borderColor: "primary.main",
                 bgcolor: "background.default",
-                borderRadius: 1,
-                p: { xs: 2, md: 3 },
+                borderRadius: 0,
+                p: { xs: 2.5, md: 3 },
                 height: "100%",
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
-                gap: 1.25,
+                gap: 1.5,
+                boxShadow: "8px 8px 0 rgba(0,0,0,0.2)",
+                // Texture de fond vintage
+                backgroundImage: `
+                    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px),
+                    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px)
+                `,
+                backgroundSize: "20px 20px",
                 ...sx,
             }}
         >
@@ -67,16 +74,21 @@ export default function BaseRetroCard({
                 <Box
                     sx={{
                         position: "absolute",
-                        top: -14,
-                        right: -14,
+                        top: -25,
+                        right: -20,
                         bgcolor: badge.color || "#AE2B1F",
-                        color: badge.textColor || "white",
+                        color: badge.textColor || "#F5ECD7",
                         fontWeight: 900,
                         fontSize: "0.75rem",
-                        px: 1.5,
-                        py: 0.5,
-                        borderRadius: "50%",
-                        transform: "rotate(-10deg)",
+                        px: 2,
+                        py: 0.75,
+                        border: "4px solid",
+                        borderColor: badge.color || "#AE2B1F",
+                        borderRadius: 0,
+                        transform: "rotate(-12deg)",
+                        // boxShadow: "4px 4px 0 rgba(0,0,0,0.3)",
+                        textTransform: "uppercase",
+                        letterSpacing: 1,
                     }}
                 >
                     {badge.text}
@@ -153,7 +165,7 @@ export default function BaseRetroCard({
 
             {/* Intro/Tagline */}
             {intro && (
-                <Typography variant="body2" sx={{ fontWeight: 700, color: "text.primary" }}>
+                <Typography variant="body2" sx={{ fontWeight: 700, color: "text.primary", fontSize: "0.95rem" }}>
                     {intro}
                 </Typography>
             )}
@@ -167,7 +179,7 @@ export default function BaseRetroCard({
                             variant="body2"
                             sx={{
                                 color: "text.secondary",
-                                fontSize: "0.85rem",
+                                fontSize: "0.95rem",
                                 "&:before": {
                                     content: '"★"',
                                     color: bulletColor,

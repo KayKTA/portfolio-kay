@@ -6,80 +6,59 @@ import { LanguageRow, LangItem } from "@/components/ui/LanguageRow";
 import RetroCard from "@/components/ui/RetroCard";
 
 const LANGAGES: LangItem[] = [
-    // { label: "JavaScript", value: 90, logo: "/logos/js.png" },
-    // { label: "TypeScript", value: 85, logo: "/logos/ts.png" },
     { label: "Nest.js", value: 70, logo: "/logos/nestjs.png" },
     { label: "Express.js", value: 70, logo: "/logos/express.png" },
     { label: "Python", value: 65, logo: "/logos/python.png" },
     { label: "Go", value: 70, logo: "/logos/go.png" },
     { label: "SQL", value: 80, logo: "/logos/sql.png" },
     { label: "PostgreSQL", value: 70, logo: "/logos/postgresql.png" },
-    // { label: "Supabase", value: 70, logo: "/logos/supabase.png" },
-    // { label: "Couchbase", value: 70, logo: "/logos/couchbase.png" },
 ];
-// Autres technologies fullstack
-// const OTHER_STACK = [
-//     { label: "Nest.js", logo: "/logos/nestjs.png" },
-//     { label: "Express.js", logo: "/logos/express.png" },
-// ];
-// Bases de données
-// const DATABASES = [
-//     { label: "PostgreSQL", logo: "/logos/postgresql.png" },
-//     { label: "Supabase", logo: "/logos/supabase.png" },
-//     { label: "Couchbase", logo: "/logos/couchbase.png" },
-// ];
-// Stack principale avec détails avancés
+
 const CORE_STACK = [
     {
         label: "React",
         logo: "/logos/react.png",
-        experience: "7 ans • Certification Meta Advanced",
+        experience: "Certifiée Meta React Advanced",
         skills: [
-            "Custom Hooks & Composition",
-            "Context API & State Management",
-            "Performance (memo, useMemo, lazy)",
-            "Testing Library & Jest",
-        ]
+            "Composants réutilisables & architecture scalable",
+            "Custom Hooks & patterns de composition",
+            "Gestion d'état (Context, formulaires, state global)",
+            "Optimisation des performances & tests (Jest, Testing Library)",
+        ],
     },
     {
         label: "Next.js",
         logo: "/logos/nextjs.svg",
-        experience: "Expert • Formation officielle",
+        experience: "Next.js moderne • App Router",
         skills: [
-            "App Router & Server Components",
-            "ISR, SSG & Streaming SSR",
-            "API Routes & Middleware",
-            "Image & Font Optimization",
-        ]
+            "Routing avancé & App Router",
+            "Server Components, ISR & SSG",
+            "APIs fullstack (API Routes, middleware, auth)",
+            "SEO, performance & optimisation des images/polices",
+        ],
     },
     {
         label: "Node.js",
         logo: "/logos/nodejs.png",
-        experience: "7 ans • Architecture scalable",
+        experience: "Back-end robuste • Architectures scalables",
         skills: [
-            "REST & GraphQL APIs",
-            "Microservices & Event-driven",
-            "Performance & Clustering",
-            "Streams & Workers",
-        ]
+            "APIs REST & GraphQL",
+            "Architecture event-driven & microservices",
+            "Gestion de la performance & montée en charge",
+            "Streams, workers & tâches asynchrones",
+        ],
     },
 ];
 
 const DATA_IA = [
     { label: "Numpy", logo: "/logos/numpy.png" },
     { label: "Pandas", logo: "/logos/pandas.svg" },
-    // { label: "Seaborn", logo: "/logos/seaborn.svg" },
     { label: "Scikit-learn", logo: "/logos/sklearn.png" },
-    // { label: "TensorFlow", logo: "/logos/tensorflow.png" },
-    // { label: "Keras", logo: "/logos/keras.png" },
-    // { label: "Jupyter", logo: "/logos/jupyter.png" },
-    // { label: "Google Colab", logo: "/logos/colab.png" },
 ];
 
 const DEVOPS_CLOUD = [
     { label: "Docker", logo: "/logos/docker.png" },
     { label: "Git", logo: "/logos/git.png" },
-    // { label: "Prefect", logo: "/logos/prefect.png" },
     { label: "Google Cloud Platform", logo: "/logos/gcp.svg" },
 ];
 
@@ -87,7 +66,7 @@ export default function Skills() {
     return (
         <SlideLayout
             title="Skills"
-            subtitle="Fullstack JS/TS • Data & IA • DevOps"
+            subtitle="écosystème JavaScript • React"
         >
             <Box
                 sx={{
@@ -104,7 +83,7 @@ export default function Skills() {
                         border: "5px solid",
                         borderColor: "primary.main",
                         bgcolor: "primary.main",
-                        borderRadius: 1,
+                        borderRadius: 0,
                         p: { xs: 2.5, md: 3.5 },
                         position: "relative",
                         overflow: "hidden",
@@ -115,14 +94,20 @@ export default function Skills() {
                             left: 0,
                             right: 0,
                             bottom: 0,
-                            background: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px)",
+                            background:
+                                "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px)",
                             pointerEvents: "none",
-                        }
+                        },
                     }}
                 >
                     <Stack spacing={2.5} sx={{ position: "relative", zIndex: 1 }}>
                         {/* Header avec badge */}
-                        <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap">
+                        <Stack
+                            direction="row"
+                            alignItems="center"
+                            spacing={2}
+                            flexWrap="wrap"
+                        >
                             <Stack direction="row" spacing={1.5} alignItems="center">
                                 <span style={{ fontSize: 28 }}>⚡</span>
                                 <Typography
@@ -131,10 +116,10 @@ export default function Skills() {
                                         fontWeight: 900,
                                         textTransform: "uppercase",
                                         color: "background.default",
-                                        lineHeight: 1.1
+                                        lineHeight: 1.1,
                                     }}
                                 >
-                                    Core Stack
+                                    Main Stack
                                 </Typography>
                             </Stack>
                             <Box
@@ -144,7 +129,7 @@ export default function Skills() {
                                     bgcolor: "background.default",
                                     border: "3px solid",
                                     borderColor: "background.default",
-                                    borderRadius: 0.5,
+                                    borderRadius: 0,
                                 }}
                             >
                                 <Typography
@@ -161,13 +146,27 @@ export default function Skills() {
                             </Box>
                         </Stack>
 
+                        {/* Petit texte d'intro */}
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: "background.default",
+                                fontWeight: 600,
+                                // maxWidth: 640,
+                            }}
+                        >
+                            Je conçois des applications web modernes de bout en bout&nbsp;:
+                            interfaces React, apps Next.js en production et APIs Node.js
+                            robustes.
+                        </Typography>
+
                         {/* Technologies avec détails - 3 colonnes */}
                         <Box
                             sx={{
                                 display: "grid",
                                 gridTemplateColumns: {
                                     xs: "1fr",
-                                    md: "repeat(3, 1fr)"
+                                    md: "repeat(3, 1fr)",
                                 },
                                 gap: 2,
                             }}
@@ -183,16 +182,20 @@ export default function Skills() {
                                         bgcolor: "background.default",
                                         border: "3px solid",
                                         borderColor: "background.default",
-                                        borderRadius: 1,
+                                        borderRadius: 0,
                                         transition: "all 0.2s",
                                         "&:hover": {
                                             transform: "translateY(-4px)",
                                             boxShadow: "0px 6px 0px rgba(0,0,0,0.1)",
-                                        }
+                                        },
                                     }}
                                 >
                                     {/* Logo + Titre */}
-                                    <Stack spacing={1.5} alignItems="center" textAlign="center">
+                                    <Stack
+                                        spacing={1.5}
+                                        alignItems="center"
+                                        textAlign="center"
+                                    >
                                         <Box
                                             component="img"
                                             src={tech.logo}
@@ -274,7 +277,6 @@ export default function Skills() {
                     sx={{
                         display: "grid",
                         gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
-                        // gridTemplateColumns: { xs: "1fr", md: "1.3fr 0.7fr" },
                         gap: { xs: 2, md: 3 },
                         alignItems: "start",
                     }}
@@ -284,17 +286,10 @@ export default function Skills() {
                             title="Autres Langages & Frameworks"
                             icon={<span style={{ fontSize: 24 }}>💻</span>}
                             items={LANGAGES}
-                        >
-                            {/* <Stack spacing={1.25}>
-                                {LANGAGES.map((lg) => (
-                                    <LanguageRow key={lg.label} {...lg} />
-                                ))}
-                            </Stack> */}
-                        </RetroCard>
+                        />
                     </Stack>
 
                     <Stack spacing={{ xs: 2, md: 3 }}>
-
                         {/* <RetroCard
                             title="Data & IA"
                             items={DATA_IA}
@@ -306,7 +301,6 @@ export default function Skills() {
                             items={DEVOPS_CLOUD}
                             icon={<span style={{ fontSize: 24 }}>🛠️</span>}
                         />
-
                     </Stack>
                 </Box>
             </Box>
