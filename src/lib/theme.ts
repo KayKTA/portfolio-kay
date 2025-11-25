@@ -80,11 +80,6 @@ const theme = createTheme({
                     fontSize: '1rem',
                     fontWeight: 700,
                     boxShadow: '6px 6px 0 rgba(0,0,0,0.2)',
-                    '&:hover': {
-                        borderWidth: 4,
-                        boxShadow: '8px 8px 0 rgba(0,0,0,0.25)',
-                        transform: 'translate(-1px, -1px)',
-                    },
                 },
             },
         },

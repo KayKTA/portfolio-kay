@@ -20,7 +20,6 @@ export default function HomePage() {
             <Experience key="xp" />,
             <Contact
                 key="contact"
-                phone="+33 6 24 38 63 84"
                 email="kaniba.keita93@gmail.com"
                 linkedin="https://www.linkedin.com/in/kaniba-keita"
                 github="https://github.com/KayKTA"
