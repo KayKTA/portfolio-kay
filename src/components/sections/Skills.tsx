@@ -2,7 +2,7 @@
 
 import { Box, Stack, Typography } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import { LanguageRow, LangItem } from "@/components/ui/LanguageRow";
+import { LangItem } from "@/components/ui/LanguageRow";
 import RetroCard from "@/components/ui/RetroCard";
 
 const LANGAGES: LangItem[] = [
@@ -22,8 +22,7 @@ const CORE_STACK = [
         skills: [
             "Composants réutilisables & architecture scalable",
             "Custom Hooks & patterns de composition",
-            "Gestion d'état (Context, formulaires, state global)",
-            "Optimisation des performances & tests (Jest, Testing Library)",
+            "Optimisation des performances & tests (Jest, Testing Library, Vitest)",
         ],
     },
     {
@@ -34,7 +33,6 @@ const CORE_STACK = [
             "Routing avancé & App Router",
             "Server Components, ISR & SSG",
             "APIs fullstack (API Routes, middleware, auth)",
-            "SEO, performance & optimisation des images/polices",
         ],
     },
     {
@@ -45,28 +43,27 @@ const CORE_STACK = [
             "APIs REST & GraphQL",
             "Architecture event-driven & microservices",
             "Gestion de la performance & montée en charge",
-            "Streams, workers & tâches asynchrones",
         ],
     },
 ];
 
-const DATA_IA = [
-    { label: "Numpy", logo: "/logos/numpy.png" },
-    { label: "Pandas", logo: "/logos/pandas.svg" },
-    { label: "Scikit-learn", logo: "/logos/sklearn.png" },
+const DATA_IA: LangItem[] = [
+    { label: "Numpy", logo: "/logos/numpy.png", value: 60 },
+    { label: "Pandas", logo: "/logos/pandas.svg", value: 70 },
+    { label: "Scikit-learn", logo: "/logos/sklearn.png", value: 60 },
 ];
 
-const DEVOPS_CLOUD = [
-    { label: "Docker", logo: "/logos/docker.png" },
-    { label: "Git", logo: "/logos/git.png" },
-    { label: "Google Cloud Platform", logo: "/logos/gcp.svg" },
+const DEVOPS_CLOUD: LangItem[] = [
+    { label: "Docker", logo: "/logos/docker.png", value: 70 },
+    { label: "Git", logo: "/logos/git.png", value: 85 },
+    { label: "Google Cloud Platform", logo: "/logos/gcp.svg", value: 60 },
 ];
 
 export default function Skills() {
     return (
         <SlideLayout
             title="Skills"
-            subtitle="écosystème JavaScript • React"
+            subtitle="Stack principale & outils du quotidien"
         >
             <Box
                 sx={{
@@ -77,7 +74,7 @@ export default function Skills() {
                     gap: { xs: 2, md: 3 },
                 }}
             >
-                {/* Core Stack - Section détaillée */}
+                {/* Main Stack */}
                 <Box
                     sx={{
                         border: "5px solid",
@@ -152,12 +149,13 @@ export default function Skills() {
                             sx={{
                                 color: "background.default",
                                 fontWeight: 600,
-                                // maxWidth: 640,
                             }}
                         >
                             Je conçois des applications web modernes de bout en bout&nbsp;:
                             interfaces React, apps Next.js en production et APIs Node.js
-                            robustes.
+                            robustes. J'ai également de l'expérience avec des outils
+                            Data (Pandas, Numpy, Scikit-learn) pour l'exploration et la
+                            visualisation.
                         </Typography>
 
                         {/* Technologies avec détails - 3 colonnes */}
@@ -261,7 +259,7 @@ export default function Skills() {
                                                         lineHeight: 1.4,
                                                     }}
                                                 >
-                                                    {skill}
+                                                        {skill}
                                                 </Typography>
                                             </Box>
                                         ))}
@@ -276,7 +274,7 @@ export default function Skills() {
                 <Box
                     sx={{
                         display: "grid",
-                        gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
+                        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
                         gap: { xs: 2, md: 3 },
                         alignItems: "start",
                     }}
@@ -290,15 +288,9 @@ export default function Skills() {
                     </Stack>
 
                     <Stack spacing={{ xs: 2, md: 3 }}>
-                        {/* <RetroCard
-                            title="Data & IA"
-                            items={DATA_IA}
-                            icon={<span style={{ fontSize: 24 }}>📊</span>}
-                        /> */}
-
                         <RetroCard
-                            title="DevOps & Cloud"
-                            items={DEVOPS_CLOUD}
+                            title="DevOps, Cloud & Data"
+                            items={[...DEVOPS_CLOUD, ...DATA_IA]}
                             icon={<span style={{ fontSize: 24 }}>🛠️</span>}
                         />
                     </Stack>

@@ -29,7 +29,7 @@ export type BaseRetroCardProps = {
     intro?: ReactNode;
 
     /** Liste à puces avec étoiles */
-    bullets?: string[];
+    bullets?: ReactNode[];
     bulletColor?: string;
 };
 

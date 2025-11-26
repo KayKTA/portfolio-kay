@@ -7,6 +7,7 @@ interface SlideLayoutProps {
     subtitle?: string;
     intro?: string; // commentaire
     headerExtra?: React.ReactNode;
+    id?: string;    // ⬅️ nouveau
 }
 
 export default function SlideLayout({
@@ -14,10 +15,12 @@ export default function SlideLayout({
     subtitle,
     intro,
     headerExtra,
+    id,
     children,
 }: PropsWithChildren<SlideLayoutProps>) {
     return (
         <Box
+            id={id} // ⬅️ ancre pour #contact, #skills, etc.
             sx={{
                 position: "relative",
                 width: "100vw",
@@ -49,7 +52,6 @@ export default function SlideLayout({
 
             {/* Titre + sous-titre */}
             <Box sx={{ position: "relative", zIndex: 10, p: { xs: 2, md: 4 } }}>
-                {/* Titre principal en rouge */}
                 <Typography
                     variant="h1"
                     sx={{
@@ -65,7 +67,6 @@ export default function SlideLayout({
                     {title}
                 </Typography>
 
-                {/* Sous-titre avec fond rouge */}
                 {subtitle && (
                     <Box
                         sx={{
@@ -75,7 +76,6 @@ export default function SlideLayout({
                             py: { xs: 0.75, md: 1 },
                             mt: { xs: 1, md: 1.5 },
                             position: "relative",
-
                         }}
                     >
                         <Typography
@@ -85,7 +85,6 @@ export default function SlideLayout({
                                 fontWeight: 900,
                                 textTransform: "uppercase",
                                 color: "background.default",
-                                // WebkitTextStroke: "1px #F5ECD7",
                                 letterSpacing: { xs: 2, md: 3 },
                                 position: "relative",
                                 zIndex: 1,
@@ -102,7 +101,7 @@ export default function SlideLayout({
             {intro && (
                 <Box
                     sx={{
-                        position: {xs: "relative", md: "absolute"},
+                        position: { xs: "relative", md: "absolute" },
                         top: { xs: "auto", md: "5%" },
                         right: { xs: "auto", md: "8%" },
                         left: { xs: "5%", md: "auto" },
@@ -118,12 +117,6 @@ export default function SlideLayout({
                         boxShadow: "1px 1px 2px rgba(0,0,0,0.25)",
                         transform: "rotate(-2deg)",
                         zIndex: 20,
-                        // quadrillage
-                        // backgroundImage: `
-                        //     linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
-                        //     linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)
-                        // `,
-                        // backgroundSize: "18px 18px",
                     }}
                 >
                     {intro}
@@ -140,7 +133,7 @@ export default function SlideLayout({
                     alignItems: "center",
                     justifyContent: "center",
                     py: { xs: 3, md: 3 },
-                    pb: { xs: 6, md: 3 }, // padding bottom plus grand sur mobile pour éviter le chevauchement
+                    pb: { xs: 6, md: 3 },
                 }}
             >
                 {children}

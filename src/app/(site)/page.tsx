@@ -14,7 +14,10 @@ import Contact from '@/components/sections/Contact'
 export default function HomePage() {
     const slides = useMemo(
         () => [
-            <Hero key="hero" />,
+            <Hero
+                key="hero"
+                onContactClick={() => setIndex(slides.length - 1)}
+            />,
             <Skills key="skills" />,
             <Education key="edu" />,
             <Experience key="xp" />,

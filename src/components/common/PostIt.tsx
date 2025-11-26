@@ -229,36 +229,3 @@ export const RetroPoster = ({
         </Stack>
     </Box>
 );
-
-export const LinkBtn = ({
-    href,
-    label,
-    emoji,
-}: {
-    href?: string;
-    label: string;
-    emoji?: string;
-}) => (
-    <Button
-        component="a"
-        href={href}
-        target={href && href.startsWith("http") ? "_blank" : undefined}
-        rel="noreferrer"
-        variant="outlined"
-        sx={{
-            border: "3px solid",
-            borderColor: "primary.main",
-            borderRadius: 2,
-            bgcolor: "background.paper",
-            fontWeight: 900,
-            textTransform: "none",
-            px: 2,
-            width: "100%",
-            height: 40,
-            "&:hover": { bgcolor: "background.default" },
-        }}
-    >
-        <span style={{ marginRight: 8 }}>{emoji ?? "👉"}</span>
-        {label}
-    </Button>
-);

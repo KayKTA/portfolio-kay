@@ -1,15 +1,17 @@
 import { Box, Grid, Stack } from "@mui/material";
+import type { ReactNode } from "react";
 import SlideLayout from "@/components/layout/SlideLayout";
 import { SimpleChip } from "@/components/ui/RetroChip";
 import BaseRetroCard from "@/components/ui/BaseRetroCard";
+import Highlight from "@/components/ui/Highlight";
 
 type Formation = {
     year: string;
     school: string;
     title: string;
-    intro?: string;         // accroche
-    description?: string[];   // paragraphe explicatif
-    techs?: string[];       // badges techno
+    intro?: string;
+    description?: ReactNode[];   // ⬅️ important : plus string[]
+    techs?: string[];
     logo?: string;
     isNew?: boolean;
 };
@@ -19,62 +21,98 @@ const FORMATIONS_LARGE: Formation[] = [
         year: "2025",
         school: "Le Wagon",
         title: "Data Science & IA",
-        intro: "Bootcamp intensif orienté projet.",
+        intro: "Bootcamp intensif orienté projet : de la manipulation de données jusqu’au déploiement de modèles.",
         description: [
-            "Apprentissage de la manipulation et de la visualisation de données avec Python, Pandas et Matplotlib",
-            "Mise en place de modèles de Machine Learning et de Deep Learning avec scikit-learn et TensorFlow",
-            "Exploration de l’IA générative, notamment les grands modèles de langage (LLMs) et les approches RAG (Retrieval-Augmented Generation)",
-            "Déploiement et mise en production de modèles via Docker et FastAPI",
-            "Conception et automatisation de pipelines de données avec Prefect",
-
+            <>
+                Manipulation, préparation et {" "}
+                <Highlight>visualisation de données</Highlight>{" "}
+                (Python, Pandas, notebooks).
+            </>,
+            <>
+                Mise en place de modèles de{" "}
+                <Highlight>Machine Learning</Highlight>{" "}
+                avec scikit-learn (classification, régression, clustering).
+            </>,
+            <>
+                Introduction au{" "}
+                <Highlight>Deep Learning</Highlight>{" "}
+                et à TensorFlow.
+            </>,
+            <>
+                Découverte de l’<Highlight>IA générative</Highlight>{" "}
+                : LLMs et approches RAG (Retrieval-Augmented Generation).
+            </>,
+            <>
+                Industrialisation : <Highlight>APIs</Highlight>{" "}
+                (FastAPI), conteneurisation <Highlight>Docker</Highlight>{" "}
+                et déploiement sur le cloud.
+            </>,
         ],
-        techs: ["Python", "Pandas", "Jupyter", "Scikit-learn", "TensorFlow", "Docker", "Google Cloud Platform", ],
+        techs: [
+            "Python",
+            "Pandas",
+            "Jupyter",
+            "Scikit-learn",
+            "TensorFlow",
+            "Docker",
+            "Google Cloud Platform",
+        ],
         logo: "/logos/wagon.png",
         isNew: true,
     },
-]
+];
+
 const FORMATIONS: Formation[] = [
     {
         year: "2018",
         school: "Coding Academy by EPITECH",
         title: "Développeur Web FullStack",
-        intro: "Formation intensive (5 mois) centrée sur les fondamentaux du développement web.",
-        description:[
-            "Piscine C, algorithmie",
-            "Développement front (AngularJS/React) et back (Node.js, Express)",
-            "Gestion de bases de données SQL/NoSQL",
-            "Méthodologie projet & travail en équipe agile",
+        intro: "Formation intensive (5 mois) centrée sur les fondamentaux du développement web moderne.",
+        description: [
+            <>
+                <Highlight>Piscine C</Highlight>, algorithmie et bases solides en logique
+                de programmation.
+            </>,
+            <>
+                Développement <Highlight>front</Highlight>{" "}
+                (AngularJS/React) et <Highlight>back</Highlight>{" "}
+                (Node.js).
+            </>,
+            <>
+                Gestion de bases de données{" "}
+                <Highlight>SQL/NoSQL</Highlight>.
+            </>,
+            <>
+                Projets en équipe avec méthodologie{" "}
+                <Highlight>agile</Highlight>.
+            </>,
         ],
         techs: ["JavaScript", "PHP", "Node.js", "SQL", "NoSQL", "C", "Git"],
         logo: "/logos/coding.png",
     },
-
     {
         year: "2017",
         school: "IFOCOP Paris XI",
         title: "Développeur Intégrateur Web",
-        intro: "Formation de 8 mois (4 mois de cours + 4 mois de stage).",
-        description:[
-            "Intégration de maquettes: HTML / CSS",
-            "Mise en place de sites responsives",
-            "Bases de JavaScript",
-            "Introduction au développement PHP/MySQL",
+        intro: "Formation de 8 mois sur les bases du développement.",
+        description: [
+            <>
+                Intégration de maquettes (
+                <Highlight>HTML/CSS</Highlight>
+                ) et mise en place de sites responsives.
+            </>,
+            <>
+                Découverte et pratique des bases de{" "}
+                <Highlight>JavaScript</Highlight>.
+            </>,
+            <>
+                Introduction au développement{" "}
+                <Highlight>PHP/MySQL</Highlight>.
+            </>,
         ],
         techs: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Git", "Agile"],
         logo: "/logos/ifocop.png",
-    }
-    // {
-    //     year: "2013",
-    //     school: "École Nationale de Commerce — Paris",
-    //     title: "BTS Comptabilité & Gestion",
-    //     intro: "Formation en gestion et finance d’entreprise.",
-    //     description: [
-    //         "Acquisition des bases en comptabilité générale",
-    //         "contrôle de gestion et droit appliqué, constituant une solide fondation analytique",
-    //     ],
-    //     techs: ["SQL", "Access", "Comptabilité", "Management" ],
-    //     logo: "/logos/enc.jpeg",
-    // },
+    },
 ];
 
 function FormationCard({ formation }: { formation: Formation }) {
@@ -102,9 +140,14 @@ function FormationCard({ formation }: { formation: Formation }) {
             intro={formation.intro}
             bullets={formation.description}
         >
-            {/* Badges techno */}
             {formation.techs?.length ? (
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: "auto" }} useFlexGap>
+                <Stack
+                    direction="row"
+                    spacing={1}
+                    flexWrap="wrap"
+                    sx={{ mt: "auto" }}
+                    useFlexGap
+                >
                     {formation.techs.map((techno) => (
                         <SimpleChip item={techno} key={techno} />
                     ))}
@@ -118,18 +161,18 @@ export default function EducationRetroSlide() {
     return (
         <SlideLayout
             title="Formations"
-            subtitle="Développeur Web • Data Science • IA"
-            intro="J’ai commencé à coder en autodidacte puis j’ai consolidé mes compétences à travers différentes formations intensives"
+            subtitle="Du web à la data"
+            intro="J’ai commencé à coder en autodidacte, puis j’ai consolidé mes compétences avec plusieurs formations intensives."
         >
             <Box sx={{ width: "100%", maxWidth: 1100 }}>
                 <Grid container spacing={3}>
                     {FORMATIONS_LARGE.map((formation) => (
-                        <Grid key={formation.title}  size={{ xs:12}}>
+                        <Grid key={formation.title} size={{ xs: 12 }}>
                             <FormationCard formation={formation} />
                         </Grid>
                     ))}
                     {FORMATIONS.map((formation) => (
-                        <Grid key={formation.title}  size={{ xs:12, sm:6}}>
+                        <Grid key={formation.title} size={{ xs: 12, sm: 6 }}>
                             <FormationCard formation={formation} />
                         </Grid>
                     ))}

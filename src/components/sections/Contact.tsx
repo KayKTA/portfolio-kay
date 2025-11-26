@@ -2,13 +2,13 @@
 
 import { Box, Stack, Typography } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import { LinkBtn, PostIt } from "@/components/common/PostIt";
+import LinkBtn from "@/components/common/LinkBtn";
 
 type Props = {
     email: string;
     linkedin: string;
     github: string;
-    cvUrl?: string; // URL du CV à télécharger
+    cvUrl?: string;
 };
 
 export default function Contact({
@@ -19,83 +19,54 @@ export default function Contact({
 }: Props) {
     return (
         <SlideLayout
+            id="contact"
             title="Contact"
-            subtitle="Envie de travailler ensemble ?"
+            subtitle="Envie de collaborer ?"
+            intro="Je suis toujours ouverte à discuter de nouveaux projets, opportunités ou collaborations. N'hésitez pas à me contacter via les liens ci-dessous !"
         >
             <Box
                 sx={{
                     width: "100%",
-                    maxWidth: 1200,
+                    mx: "auto",
                     display: "flex",
                     flexDirection: "column",
                     gap: { xs: 3, md: 4 },
                 }}
             >
-                {/* Section principale avec post-its */}
-                <Box
-                    sx={{
-                        display: "grid",
-                        gridTemplateColumns: {
-                            xs: "1fr",
-                            sm: "repeat(2, 1fr)",
-                            md: "repeat(3, 1fr)",
-                        },
-                        gap: 3,
-                        justifyItems: "center",
-                    }}
+
+                <Stack
+                    direction={{ xs: "column", sm: "row" }}
+                    spacing={1.5}
+                    // sx={{ width: "100%", maxWidth: 420 }}
                 >
-                    {/* Post-it Contact */}
-                    <PostIt color="#FFD966" rotate={-3}>
-                        <Typography
-                            sx={{
-                                fontSize: { xs: "1.3rem", md: "1.5rem" },
-                                fontFamily: "'Permanent Marker', cursive",
-                                lineHeight: 1.3,
-                                mb: 1.5,
-                            }}
-                        >
-                            📬 Me contacter
-                        </Typography>
-                        <Stack spacing={1.2}>
-                            <LinkBtn href={`mailto:${email}`} label={email} emoji="✉️" />
-                        </Stack>
-                    </PostIt>
+                    <LinkBtn
+                        href={cvUrl}
+                        label="Télécharger mon CV"
+                        variant="primary"
+                    />
+                    <LinkBtn
+                        href={`mailto:${email}`}
+                        label={email}
+                        variant="outline"
+                    />
+                    <Box sx={{ flex: 1 }} >
+                        <LinkBtn
+                            href={linkedin}
+                            label="LinkedIn"
+                            variant="outline"
+                        />
+                    </Box>
+                    <Box sx={{ flex: 1 }} >
+                        <LinkBtn
+                            href={github}
+                            label="GitHub"
+                            variant="outline"
+                        />
+                    </Box>
+                </Stack>
 
-                    {/* Post-it Réseaux */}
-                    <PostIt color="#FFC66B" rotate={2}>
-                        <Typography
-                            sx={{
-                                fontSize: { xs: "1.3rem", md: "1.5rem" },
-                                fontFamily: "'Permanent Marker', cursive",
-                                lineHeight: 1.3,
-                                mb: 1.5,
-                            }}
-                        >
-                            🌐 Me suivre
-                        </Typography>
-                        <Stack spacing={1.2}>
-                            <LinkBtn href={linkedin} label="LinkedIn" emoji="💼" />
-                            <LinkBtn href={github} label="GitHub" emoji="💻" />
-                        </Stack>
-                    </PostIt>
 
-                    {/* Post-it CV */}
-                    <PostIt color="#FFCBA4" rotate={-2}>
-                        <Typography
-                            sx={{
-                                fontSize: { xs: "1.3rem", md: "1.5rem" },
-                                fontFamily: "'Permanent Marker', cursive",
-                                lineHeight: 1.3,
-                                mb: 1.5,
-                            }}
-                        >
-                            📄 Mon CV
-                        </Typography>
-                        <LinkBtn href={cvUrl} label="Télécharger" emoji="⬇️" />
-                    </PostIt>
-                </Box>
-
-                {/* Carte de présentation améliorée */}
+                {/* --- BLOC OBJECTIF FULL WIDTH --- */}
                 <Box
                     sx={{
                         border: "5px solid",
@@ -142,14 +113,14 @@ export default function Contact({
                                     fontSize: "0.9rem",
                                 }}
                             >
-                                💡 Ce que je cherche aujourd&apos;hui
+                                ★ Ce que je cherche aujourd'hui ★
                             </Typography>
                         </Box>
 
                         {/* Texte principal */}
                         <Typography
                             sx={{
-                                fontSize: { xs: "1.25rem", md: "1.5rem" },
+                                fontSize: { xs: "1.2rem", md: "1.4rem" },
                                 fontWeight: 700,
                                 lineHeight: 1.5,
                                 color: "background.default",
@@ -158,7 +129,7 @@ export default function Contact({
                                 mx: "auto",
                             }}
                         >
-                            Je cherche un poste où je peux construire des applications{" "}
+                            Je recherche un poste de{" "}
                             <Box
                                 component="span"
                                 sx={{
@@ -170,23 +141,23 @@ export default function Contact({
                                     fontWeight: 900,
                                 }}
                             >
-                                utiles, belles et bien pensées
-                            </Box> tout en évoluant
-                            progressivement vers un rôle de{" "}
-                            <Box
-                                component="span"
-                                sx={{
-                                    bgcolor: "background.default",
-                                    color: "primary.main",
-                                    px: 0.5,
-                                    py: 0.25,
-                                    borderRadius: 0,
-                                    fontWeight: 900,
-                                }}
-                            >
-                                lead technique
+                                développeuse fullstack
                             </Box>{" "}
-                            au sein d'une équipe bienveillante et exigeante.
+                            (React, Next.js, Node.js) où je peux continuer à coder au quotidien, avoir un vrai impact sur le produit et évoluer progressivement vers un rôle de{" "}
+                            <Box
+                                component="span"
+                                sx={{
+                                    bgcolor: "background.default",
+                                    color: "primary.main",
+                                    px: 0.5,
+                                    py: 0.25,
+                                    borderRadius: 0,
+                                    fontWeight: 900,
+                                }}
+                            >
+                                lead technique &amp; mentoring
+                            </Box>
+                            .
                         </Typography>
 
                         {/* Points clés */}
@@ -203,62 +174,19 @@ export default function Contact({
                             {[
                                 {
                                     emoji: "⚡",
-                                    text: "Stack moderne (React, Next.js, Node.js)",
+                                    text: "Stack moderne : React, Next.js, Node.js",
                                 },
                                 {
                                     emoji: "🎯",
-                                    text: "Projets concrets avec de vrais enjeux produit",
-                                }
-                            ].map((item, i) => (
-                                <Box
-                                    key={i}
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 1,
-                                        px: 2.5,
-                                        py: 1.25,
-                                        bgcolor: "background.default",
-                                        border: "3px solid",
-                                        borderColor: "background.default",
-                                        borderRadius: 0,
-                                        marginLeft: 0,
-                                    }}
-                                >
-                                    <Typography sx={{ fontSize: "1.5rem" }}>
-                                        {item.emoji}
-                                    </Typography>
-                                    <Typography
-                                        sx={{
-                                            fontWeight: 700,
-                                            color: "text.primary",
-                                            fontSize: { xs: "0.9rem", md: "1rem" },
-                                        }}
-                                    >
-                                        {item.text}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Stack>
-                        <Stack
-                            direction={{ xs: "column", md: "row" }}
-                            spacing={2}
-                            sx={{
-                                mt: 2,
-                                justifyContent: "center",
-                                flexWrap: "wrap",
-                                gap: 2,
-                            }}
-                        >
-                            {[
-
+                                    text: "Projets produits concrets avec de vrais enjeux",
+                                },
                                 {
                                     emoji: "🚀",
-                                    text: "Montée en responsabilités & mentoring",
+                                    text: "Montée en responsabilités & rôle de référence technique",
                                 },
                                 {
                                     emoji: "🤝",
-                                    text: "Équipe curieuse, bienveillante et passionnée",
+                                    text: "Équipe bienveillante, curieuse et exigeante",
                                 },
                             ].map((item, i) => (
                                 <Box
@@ -273,7 +201,6 @@ export default function Contact({
                                         border: "3px solid",
                                         borderColor: "background.default",
                                         borderRadius: 0,
-                                        marginLeft: 0,
                                     }}
                                 >
                                     <Typography sx={{ fontSize: "1.5rem" }}>
@@ -292,6 +219,7 @@ export default function Contact({
                             ))}
                         </Stack>
 
+                        {/* CTA final */}
                         <Box sx={{ textAlign: "center", mt: 4 }}>
                             <Typography
                                 sx={{
@@ -301,9 +229,10 @@ export default function Contact({
                                     fontFamily: "'Permanent Marker', cursive",
                                 }}
                             >
-                                Une opportunité, un projet, une idée ? Parlons-en ! 💬
+                                Une opportunité, un projet, une idée ? Écrivez-moi 💬
                             </Typography>
                         </Box>
+
                     </Box>
                 </Box>
             </Box>
