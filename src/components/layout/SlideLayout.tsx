@@ -23,10 +23,12 @@ export default function SlideLayout({
             id={id} // ⬅️ ancre pour #contact, #skills, etc.
             sx={{
                 position: "relative",
-                width: "100vw",
+                width: "100%",
                 minHeight: "100vh",
-                height: { xs: "auto", md: "100vh" },
-                overflow: { xs: "auto", md: "hidden" },
+                // height: { xs: "auto", md: "100vh" },
+                // overflow: { xs: "auto", md: "hidden" },
+                // height: "auto",
+                overflow: "auto",
                 bgcolor: "background.default",
                 color: "text.primary",
                 display: "flex",
@@ -51,11 +53,14 @@ export default function SlideLayout({
             />
 
             {/* Titre + sous-titre */}
-            <Box sx={{ position: "relative", zIndex: 10, p: { xs: 2, md: 4 } }}>
+            <Box sx={{ position: "relative", zIndex: 10, p: { xs: 2, md: 2 } }}>
                 <Typography
                     variant="h1"
                     sx={{
-                        fontSize: { xs: "15vw", md: "6vw" },
+                        fontSize: {
+                            xs: "clamp(2.6rem, 11vw, 3.4rem)",   // mobile : entre 2.6rem et 3.4rem
+                            md: "clamp(3.2rem, 6vw, 4.6rem)",   // desktop : max ~4.6rem
+                        },
                         fontWeight: 900,
                         lineHeight: 0.9,
                         textTransform: "uppercase",
@@ -66,7 +71,6 @@ export default function SlideLayout({
                 >
                     {title}
                 </Typography>
-
                 {subtitle && (
                     <Box
                         sx={{
@@ -102,8 +106,8 @@ export default function SlideLayout({
                 <Box
                     sx={{
                         position: { xs: "relative", md: "absolute" },
-                        top: { xs: "auto", md: "5%" },
-                        right: { xs: "auto", md: "8%" },
+                        top: { xs: "auto", md: "3%" },
+                        right: { xs: "auto", md: "7%" },
                         left: { xs: "5%", md: "auto" },
                         maxWidth: 350,
                         fontFamily: "'Permanent Marker', cursive",
@@ -112,7 +116,7 @@ export default function SlideLayout({
                         color: "text.primary",
                         bgcolor: "#FFD966",
                         px: 2,
-                        py: 1.5,
+                        // py: 0.5,
                         borderRadius: 1,
                         boxShadow: "1px 1px 2px rgba(0,0,0,0.25)",
                         transform: "rotate(-2deg)",
@@ -128,12 +132,13 @@ export default function SlideLayout({
                 sx={{
                     position: "relative",
                     zIndex: 10,
-                    // flex: 1,
+                    flex: 1,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    // py: { xs: 3, md: 3 },
-                    pb: { xs: 6, md: 3 },
+                    py: { xs: 3, md: 1 },
+                    pb: { xs: 6, md: 1 },
+                    mb: { xs: 6, md: 2},
                 }}
             >
                 {children}

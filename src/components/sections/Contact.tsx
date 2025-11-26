@@ -37,7 +37,7 @@ export default function Contact({
                 <Stack
                     direction={{ xs: "column", sm: "row" }}
                     spacing={1.5}
-                    // sx={{ width: "100%", maxWidth: 420 }}
+                    // sx={{ maxWidth: 1000, textAlign: "center", mx: "auto" }}
                 >
                     <LinkBtn
                         href={cvUrl}

@@ -9,7 +9,7 @@ export default function RetroCard(props: { title: string; icon?: React.ReactNode
                 borderColor: "primary.main",
                 bgcolor: "background.default",
                 borderRadius: 0,
-                p: { xs: 2.5, md: 3 },
+                p: { xs: 2.5, md: 2 },
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",

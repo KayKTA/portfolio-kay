@@ -22,7 +22,7 @@ const CORE_STACK = [
         skills: [
             "Composants réutilisables & architecture scalable",
             "Custom Hooks & patterns de composition",
-            "Optimisation des performances & tests (Jest, Testing Library, Vitest)",
+            "Optimisation des performances & tests (Jest, Vitest)",
         ],
     },
     {
@@ -56,7 +56,7 @@ const DATA_IA: LangItem[] = [
 const DEVOPS_CLOUD: LangItem[] = [
     { label: "Docker", logo: "/logos/docker.png", value: 70 },
     { label: "Git", logo: "/logos/git.png", value: 85 },
-    { label: "Google Cloud Platform", logo: "/logos/gcp.svg", value: 60 },
+    { label: "GCP", logo: "/logos/gcp.svg", value: 60 },
 ];
 
 export default function Skills() {
@@ -105,7 +105,7 @@ export default function Skills() {
                             spacing={2}
                             flexWrap="wrap"
                         >
-                            <Stack direction="row" spacing={1.5} alignItems="center">
+                            {/* <Stack direction="row" spacing={1.5} alignItems="center">
                                 <span style={{ fontSize: 28 }}>⚡</span>
                                 <Typography
                                     variant="h5"
@@ -118,7 +118,7 @@ export default function Skills() {
                                 >
                                     Main Stack
                                 </Typography>
-                            </Stack>
+                            </Stack> */}
                             <Box
                                 sx={{
                                     px: 2,
@@ -176,16 +176,16 @@ export default function Skills() {
                                         display: "flex",
                                         flexDirection: "column",
                                         gap: 1.5,
-                                        p: { xs: 2, md: 2 },
+                                        p: { xs: 2, md: 1.5 },
                                         bgcolor: "background.default",
                                         border: "3px solid",
                                         borderColor: "background.default",
                                         borderRadius: 0,
-                                        transition: "all 0.2s",
-                                        "&:hover": {
-                                            transform: "translateY(-4px)",
-                                            boxShadow: "0px 6px 0px rgba(0,0,0,0.1)",
-                                        },
+                                        // transition: "all 0.2s",
+                                        // "&:hover": {
+                                        //     transform: "translateY(-4px)",
+                                        //     boxShadow: "0px 6px 0px rgba(0,0,0,0.1)",
+                                        // },
                                     }}
                                 >
                                     {/* Logo + Titre */}
@@ -199,8 +199,8 @@ export default function Skills() {
                                             src={tech.logo}
                                             alt={tech.label}
                                             sx={{
-                                                width: { xs: 56, md: 72 },
-                                                height: { xs: 56, md: 72 },
+                                                width: { xs: 56, md: 60 },
+                                                height: { xs: 56, md: 60 },
                                                 objectFit: "contain",
                                             }}
                                         />
@@ -274,7 +274,7 @@ export default function Skills() {
                 <Box
                     sx={{
                         display: "grid",
-                        gridTemplateColumns: { xs: "1fr", md: "0.9fr 1.1fr" },
+                        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
                         gap: { xs: 2, md: 3 },
                         alignItems: "start",
                     }}

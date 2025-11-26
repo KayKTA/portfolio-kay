@@ -53,12 +53,12 @@ export default function BaseRetroCard({
                 borderColor: "primary.main",
                 bgcolor: "background.default",
                 borderRadius: 0,
-                p: { xs: 2.5, md: 3 },
+                p: { xs: 2.5, md: 2 },
                 height: "100%",
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
-                gap: 1.5,
+                gap: 1,
                 boxShadow: "8px 8px 0 rgba(0,0,0,0.2)",
                 // Texture de fond vintage
                 backgroundImage: `
@@ -172,7 +172,7 @@ export default function BaseRetroCard({
 
             {/* Liste à puces avec étoiles */}
             {bullets && bullets.length > 0 && (
-                <Stack spacing={0.6} sx={{ flex: 1 }}>
+                <Stack spacing={0.5} sx={{ flex: 1 }}>
                     {bullets.map((bullet, i) => (
                         <Typography
                             key={i}
