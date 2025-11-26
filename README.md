@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Kaniba Keita — Developer Portfolio
 
-## Getting Started
+**Live website → [https://kay-kta.vercel.app/](https://kay-kta.vercel.app/)**
 
-First, run the development server:
+A retro-poster inspired, fully responsive developer portfolio showcasing my work, skills, and journey as a Fullstack JavaScript developer transitioning towards Data & AI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project was designed and developed from scratch using modern React tooling, with a strong focus on visual identity, performance, reusability, and consistency.
+
+---
+
+## 🎨 Concept & Goals
+
+The idea behind this portfolio was to create something bold, memorable, and different from typical developer portfolios.
+
+Instead of minimalism, this design embraces:
+
+* **Retro print aesthetics** (textures, grids, bold typography)
+* **Poster-style layouts** with strong color blocks
+* **Full-screen slides** with smooth transitions
+* **Hand-drawn accents** (post-its, markers, highlights)
+* A tone that reflects **my personality**, not just my skills.
+
+Everything in the design is component-driven so the UI can scale while staying consistent.
+
+---
+
+## 🧰 Tech Stack
+
+### **Frontend**
+
+* Next.js (App Router)
+* React 18
+* TypeScript
+* MUI v7
+* Framer Motion
+* CSS-in-JS with MUI's `sx` API
+
+### **Design System**
+
+* Custom retro grid background
+* Poster-style layouts
+* Reusable UI components (RetroCard, SimpleChip, LinkBtn, CodeTyper…)
+
+### **Deployment**
+
+* Vercel
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+ ├─ components/
+ │   ├─ layout/       → SlideLayout, page-level wrappers
+ │   ├─ common/       → LinkBtn, highlight components, CodeTyper
+ │   ├─ ui/           → RetroCard, SimpleChip, LanguageRow
+ │   └─ slides/       → Hero, Skills, Experience, Education, Contact
+ │
+ ├─ styles/           → global styles & theme overrides
+ ├─ app/              → Next.js app router pages
+ └─ public/           → logos, assets, favicon, fonts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Each slide is self-contained but shares a consistent layout system.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+### ✨ Full-screen slide navigation
 
-To learn more about Next.js, take a look at the following resources:
+* Each section is designed as a visual “poster”
+* Adaptive layout for all screen sizes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎯 Custom animated components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Code typing animation (`CodeTyper`)
+* Highlighted text blocks
+* Retro-style buttons with variants
 
-## Deploy on Vercel
+### 📦 Clean, reusable UI components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* RetroCard for Skills & Experience
+* Chip system (SimpleChip)
+* Timeline-ready formation section
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📱 Fully responsive
+
+* Dynamic typography with `clamp()`
+* Tested on desktop + mobile
+
+---
+
+## 🔗 Live Demo
+
+👉 **[https://kay-kta.vercel.app/](https://kay-kta.vercel.app/)**
+
+For the best experience, view it in full-screen.
+
+---
+
+## 🏗️ Running locally
+
+```bash
+git clone <your-repo-url>
+cd your-portfolio
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+---
+
+## 📝 License
+
+This project is open for inspiration, but the content, design identity, and visual elements should not be reused without permission.
