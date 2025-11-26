@@ -22,7 +22,7 @@ export default function Contact({
             id="contact"
             title="Contact"
             subtitle="Envie de collaborer ?"
-            intro="Je suis toujours ouverte à discuter de nouveaux projets, opportunités ou collaborations. N'hésitez pas à me contacter via les liens ci-dessous !"
+            intro="Je suis disponible immédiatement pour de nouvelles opportunités. N'hésitez pas à me contacter via les liens ci-dessous !"
         >
             <Box
                 sx={{
@@ -125,7 +125,7 @@ export default function Contact({
                                 lineHeight: 1.5,
                                 color: "background.default",
                                 textAlign: { xs: "left", md: "center" },
-                                maxWidth: 900,
+                                maxWidth: 1250,
                                 mx: "auto",
                             }}
                         >
@@ -133,12 +133,9 @@ export default function Contact({
                             <Box
                                 component="span"
                                 sx={{
-                                    bgcolor: "background.default",
-                                    color: "primary.main",
-                                    px: 0.5,
-                                    py: 0.25,
-                                    borderRadius: 0,
-                                    fontWeight: 900,
+                                    textDecoration: "underline",
+                                    textUnderlineOffset: 4,
+                                    fontWeight: 700,
                                 }}
                             >
                                 développeuse fullstack
@@ -147,12 +144,15 @@ export default function Contact({
                             <Box
                                 component="span"
                                 sx={{
-                                    bgcolor: "background.default",
-                                    color: "primary.main",
-                                    px: 0.5,
-                                    py: 0.25,
-                                    borderRadius: 0,
-                                    fontWeight: 900,
+                                    // bgcolor: "background.default",
+                                    // color: "primary.main",
+                                    // px: 0.5,
+                                    // py: 0.25,
+                                    // borderRadius: 0,
+                                    // fontWeight: 900,
+                                    textDecoration: "underline",
+                                    textUnderlineOffset: 4,
+                                    fontWeight: 700,
                                 }}
                             >
                                 lead technique &amp; mentoring
@@ -169,6 +169,8 @@ export default function Contact({
                                 justifyContent: "center",
                                 flexWrap: "wrap",
                                 gap: 2,
+                                maxWidth: 1200,
+                                mx: "auto",
                             }}
                         >
                             {[

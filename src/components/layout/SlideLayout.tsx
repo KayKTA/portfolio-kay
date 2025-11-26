@@ -55,13 +55,13 @@ export default function SlideLayout({
                 <Typography
                     variant="h1"
                     sx={{
-                        fontSize: { xs: "15vw", md: "9vw" },
+                        fontSize: { xs: "15vw", md: "6vw" },
                         fontWeight: 900,
                         lineHeight: 0.9,
                         textTransform: "uppercase",
                         letterSpacing: { xs: -2, md: -3 },
                         color: "primary.main",
-                        textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
+                        // textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
                     }}
                 >
                     {title}
@@ -81,7 +81,7 @@ export default function SlideLayout({
                         <Typography
                             variant="h4"
                             sx={{
-                                fontSize: { xs: "4.5vw", md: "2.5vw" },
+                                fontSize: { xs: "4.5vw", md: "1vw" },
                                 fontWeight: 900,
                                 textTransform: "uppercase",
                                 color: "background.default",
@@ -124,15 +124,15 @@ export default function SlideLayout({
             )}
 
             <Container
-                maxWidth="lg"
+                maxWidth="xl"
                 sx={{
                     position: "relative",
                     zIndex: 10,
-                    flex: 1,
+                    // flex: 1,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    py: { xs: 3, md: 3 },
+                    // py: { xs: 3, md: 3 },
                     pb: { xs: 6, md: 3 },
                 }}
             >

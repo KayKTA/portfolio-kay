@@ -67,7 +67,7 @@ const FORMATIONS: Formation[] = [
         year: "2018",
         school: "Coding Academy by EPITECH",
         title: "Développeur Web FullStack",
-        intro: "Formation intensive (5 mois) centrée sur les fondamentaux du développement web moderne.",
+        intro: "Formation intensive (5 mois) sur les fondamentaux du développement web moderne.",
         description: [
             <>
                 <Highlight>Piscine C</Highlight>, algorithmie et bases solides en logique
@@ -164,7 +164,7 @@ export default function EducationRetroSlide() {
             subtitle="Du web à la data"
             intro="J’ai commencé à coder en autodidacte, puis j’ai consolidé mes compétences avec plusieurs formations intensives."
         >
-            <Box sx={{ width: "100%", maxWidth: 1100 }}>
+            <Box sx={{ width: "100%" }}>
                 <Grid container spacing={3}>
                     {FORMATIONS_LARGE.map((formation) => (
                         <Grid key={formation.title} size={{ xs: 12 }}>

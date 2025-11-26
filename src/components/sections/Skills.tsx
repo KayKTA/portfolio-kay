@@ -68,7 +68,7 @@ export default function Skills() {
             <Box
                 sx={{
                     width: "100%",
-                    maxWidth: 1200,
+                    // maxWidth: 1200,
                     display: "flex",
                     flexDirection: "column",
                     gap: { xs: 2, md: 3 },
@@ -274,7 +274,7 @@ export default function Skills() {
                 <Box
                     sx={{
                         display: "grid",
-                        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+                        gridTemplateColumns: { xs: "1fr", md: "0.9fr 1.1fr" },
                         gap: { xs: 2, md: 3 },
                         alignItems: "start",
                     }}

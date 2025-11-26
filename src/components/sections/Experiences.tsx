@@ -178,9 +178,9 @@ export default function ExperienceSlide() {
             <Box
                 sx={{
                     width: "100%",
-                    maxWidth: 1200,
+                    // maxWidth: 1200,
                     display: "grid",
-                    gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
+                    gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
                     gap: { xs: 2, md: 3 },
                     alignItems: "stretch",
                 }}
