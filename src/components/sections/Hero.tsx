@@ -53,7 +53,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 letterSpacing: -1,
               }}
             >
-              Je transforme des idées en applications utiles.
+              Je transforme des idées en applications utiles ✨
             </Typography>
 
             <Typography

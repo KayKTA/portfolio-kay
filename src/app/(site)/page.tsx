@@ -19,8 +19,8 @@ export default function HomePage() {
                 onContactClick={() => setIndex(slides.length - 1)}
             />,
             <Skills key="skills" />,
-            <Education key="edu" />,
             <Experience key="xp" />,
+            <Education key="edu" />,
             <Contact
                 key="contact"
                 email="kaniba.keita93@gmail.com"

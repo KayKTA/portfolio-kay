@@ -21,7 +21,7 @@ const FORMATIONS_LARGE: Formation[] = [
         year: "2025",
         school: "Le Wagon",
         title: "Data Science & IA",
-        intro: "Bootcamp intensif orienté projet : de la manipulation de données jusqu’au déploiement de modèles.",
+        intro: "Bootcamp intensif orienté projet : de la manipulation de données jusqu'au déploiement de modèles.",
         description: [
             <>
                 Manipulation, préparation et {" "}
@@ -39,7 +39,7 @@ const FORMATIONS_LARGE: Formation[] = [
                 et à TensorFlow.
             </>,
             <>
-                Découverte de l’<Highlight>IA générative</Highlight>{" "}
+                Découverte de l'<Highlight>IA générative</Highlight>{" "}
                 : LLMs et approches RAG (Retrieval-Augmented Generation).
             </>,
             <>
@@ -162,7 +162,7 @@ export default function EducationRetroSlide() {
         <SlideLayout
             title="Formations"
             subtitle="Du web à la data"
-            intro="J’ai commencé à coder en autodidacte, puis j’ai consolidé mes compétences avec plusieurs formations intensives."
+            intro="J'ai commencé à coder en autodidacte, puis j'ai consolidé mes compétences avec plusieurs formations intensives."
         >
             <Box sx={{ width: "100%" }}>
                 <Grid container spacing={3}>
