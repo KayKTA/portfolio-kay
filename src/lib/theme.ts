@@ -10,23 +10,23 @@ declare module '@mui/material/styles' {
 }
 
 const colors = {
-  paperLight:  '#F5ECD7',   // Crème vintage
-  paperDeep:   '#FFE7A1',
-  ink:         '#1A0F00',   // Noir profond
-  accentRed:   '#AE2B1F',   // Rouge bordeaux foncé
-  accentOrange: '#E85D3B',  // Orange brûlé
-  accentYellow: '#FFD34E',  // Jaune
-  grid:        '#C27C2A',
+    paperLight: '#F5ECD7',   // Crème vintage
+    paperDeep: '#FFE7A1',
+    ink: '#1A0F00',   // Noir profond
+    accentRed: '#AE2B1F',   // Rouge bordeaux foncé
+    accentOrange: '#E85D3B',  // Orange brûlé
+    accentYellow: '#FFD34E',  // Jaune
+    grid: '#C27C2A',
 };
 
 const theme = createTheme({
     palette: {
         mode: 'light',
-        primary:   { main: colors.accentRed },
+        primary: { main: colors.accentRed },
         secondary: { main: colors.accentOrange },
-        background:{ default: colors.paperLight, paper: colors.paperLight },
-        text:      { primary: colors.ink, secondary: '#4A2800' },
-        divider:   colors.accentRed,
+        background: { default: colors.paperLight, paper: colors.paperLight },
+        text: { primary: colors.ink, secondary: '#4A2800' },
+        divider: colors.accentRed,
     },
     shape: { borderRadius: 0 },
     typography: {

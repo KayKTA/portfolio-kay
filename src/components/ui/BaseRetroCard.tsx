@@ -31,6 +31,7 @@ export type BaseRetroCardProps = {
     /** Liste à puces avec étoiles */
     bullets?: ReactNode[];
     bulletColor?: string;
+    footer?: ReactNode;
 };
 
 /**
@@ -45,6 +46,7 @@ export default function BaseRetroCard({
     intro,
     bullets,
     bulletColor = "#AE2B1F",
+    footer
 }: BaseRetroCardProps) {
     return (
         <Box
@@ -197,6 +199,7 @@ export default function BaseRetroCard({
 
             {/* Contenu personnalisé */}
             {children}
+            {footer}
         </Box>
     );
 }
