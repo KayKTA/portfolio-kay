@@ -7,7 +7,7 @@ interface SlideLayoutProps {
     subtitle?: string;
     intro?: string; // commentaire
     headerExtra?: React.ReactNode;
-    id?: string;    // ⬅️ nouveau
+    id?: string;
 }
 
 export default function SlideLayout({

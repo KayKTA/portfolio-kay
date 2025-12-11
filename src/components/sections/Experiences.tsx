@@ -220,7 +220,7 @@ export default function ExperienceSlide() {
         <SlideLayout
             title="Expériences"
             subtitle="Produits web modernes, performance & sens du détail"
-            intro="Après 6 ans en startup, le freelance m’a permis d’élargir mon champ d’action : web, data, IA et projets orientés produit."
+            intro="Après 6 ans en startup, le freelance m'a permis d'élargir mon champ d'action : web, data, IA et projets orientés produit."
         >
             <Box
                 sx={{
