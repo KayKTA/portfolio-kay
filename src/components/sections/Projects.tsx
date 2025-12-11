@@ -14,6 +14,7 @@ type Project = {
     stack?: string[];
     liveUrl?: string;              // lien vers la démo / site
     repoUrl?: string;              // lien vers le code
+    storybookUrl?: string;         // lien vers Storybook
     featured?: boolean;
 };
 
@@ -40,34 +41,42 @@ const PROJECTS: Project[] = [
         repoUrl: "https://github.com/KayKTA/travel-story-maker",
     },
     {
-        title: "Titanic Interactive",
-        tagline: "Mini-app data : “Survivrais-tu au Titanic ?”",
+        title: "AI Agent Customizer",
+        tagline: "Configuration d'agents IA • Web & outils internes",
+        featured: false,
         description: [
-            <>
-                Application en deux modes : un mode <Highlight>jeu</Highlight> où
-                l’utilisateur répond à des questions et voit sa probabilité de survie,
-                et un mode <Highlight>exploration</Highlight> du dataset.
-            </>,
-            <>
-                Visualisations (graphes) pour comprendre l’impact des{" "}
-                <Highlight>features</Highlight> (classe, âge, sexe, etc.) sur la
-                survie.
-            </>,
+            <>Outil interne pour définir l'<Highlight>identité</Highlight>, le <Highlight>style</Highlight> et les <Highlight>domaines</Highlight> d'un agent conversationnel (nom, rôle, ton, niveau, règles).</>,
+            <>Génération automatique d'un <Highlight>system prompt</Highlight> + résumé lisible, prêts à être copiés dans une autre application (bot, outil interne, assistant produit…).</>,
+            <>Playground de chat et interface <Highlight>documentée dans Storybook</Highlight>.</>,
         ],
         images: [
-            "/projects/titanic-1.png",
-            "/projects/titanic-2.png",
+            "/projects/ai-agent-hero.png",          // hero / layout global
+            "/projects/ai-agent-prompt.png",   // form en 3 colonnes
+            "/projects/ai-agent-insight.png",      // carte prompt + résumé
+            "/projects/ai-agent-playground.png",    // chat / playground
         ],
-        stack: ["Next.js", "React", "TypeScript", "Charts", "Python / ML (en amont)"],
-        liveUrl: "https://ton-url-titanic.com",
-        repoUrl: "https://github.com/ton-user/titanic-interactive",
-    },
+        stack: [
+            "Next.js",
+            // "React",
+            "TypeScript",
+            // "MUI",
+            "Zustand",
+            // "Zod",
+            "Storybook",
+            "Vitest",
+            "OpenAI",
+        ],
+        liveUrl: "https://ai-agent-customizer.vercel.app",
+        repoUrl: "https://github.com/KayKTA/ai-agent-customizer",
+        storybookUrl: "https://ai-agent-customizer-storybook.vercel.app",
+    }
+
     // {
     //     title: "Dashboard Data",
     //     tagline: "Data storytelling & visualisation",
     //     description: [
     //         <>
-    //             Projet d’exploration de données présenté sous forme de{" "}
+    //             Projet d'exploration de données présenté sous forme de{" "}
     //             <Highlight>dashboard interactif</Highlight>.
     //         </>,
     //         <>
@@ -127,7 +136,7 @@ function ProjectLinkButton({ href, children, variant = "outline" }: ProjectLinkB
     );
 }
 
-/* ===== Mini carousel d’images ===== */
+/* ===== Mini carousel d'images ===== */
 
 function ProjectImagesCarousel({ images }: { images: string[] }) {
     const [index, setIndex] = useState(0);
@@ -279,6 +288,11 @@ function ProjectCard({ project }: { project: Project }) {
                         Voir le code
                     </ProjectLinkButton>
                 )}
+                {project.storybookUrl && (
+                    <ProjectLinkButton href={project.storybookUrl} variant="outline">
+                        Storybook
+                    </ProjectLinkButton>
+                )}
             </Stack>
         </BaseRetroCard>
     );
@@ -301,17 +315,17 @@ export default function ProjectsSlide() {
                     sx={{
                         width: "100%",
                         display: "grid",
-                        gridTemplateColumns: { xs: "1fr" },
+                        gridTemplateColumns: { xs: "1fr 1fr" },
                         gap: { xs: 2, md: 3 },
                         alignItems: "stretch",
                     }}
                 >
                     <ProjectCard project={featured} />
-                    {/* <Stack spacing={{ xs: 2, md: 3 }}>
+                    <Stack spacing={{ xs: 2, md: 3 }}>
                         {others.map((p) => (
                             <ProjectCard key={p.title} project={p} />
                         ))}
-                    </Stack> */}
+                    </Stack>
                 </Box>
             </Container>
         </SlideLayout>
