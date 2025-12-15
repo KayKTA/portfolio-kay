@@ -18,7 +18,7 @@ export default function ProjectDrawer({
                 width: isActive ? PREVIEW_WIDTH : 0,
             }}
             transition={{
-                type: "spring",
+                // type: "spring",
                 stiffness: 300,
                 damping: 30,
             }}

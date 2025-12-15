@@ -184,7 +184,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                     fontWeight: 900,
                                     textTransform: "uppercase",
                                     letterSpacing: -1.5,
-                                    lineHeight: 0.95,
+                                    lineHeight: 1.1,
                                     fontSize: { xs: "12vw", md: "4.5rem" },
                                 }}
                             >

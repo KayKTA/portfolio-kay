@@ -5,9 +5,9 @@ import { useState } from "react";
 import WindowCard from "../ui/WindowCard";
 import { SimpleChip } from "../ui/RetroChip";
 import { ProjectImagesCarousel } from "./ProjectImagesCarousel";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import CodeIcon from "@mui/icons-material/Code";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { Public } from "@mui/icons-material";
 
 export type Project = {
     title: string;
@@ -119,17 +119,17 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <Stack direction="row" spacing={1} sx={{ flexShrink: 0 }}>
                     <ProjectIconButton
                         href={project.liveUrl}
-                        icon={<OpenInNewIcon fontSize="small" />}
+                        icon={<Public fontSize="medium" />}
                         label="Voir le projet"
                     />
                     <ProjectIconButton
                         href={project.repoUrl}
-                        icon={<CodeIcon fontSize="small" />}
+                        icon={<CodeIcon fontSize="medium" />}
                         label="Voir le code"
                     />
                     <ProjectIconButton
                         href={project.storybookUrl}
-                        icon={<MenuBookIcon fontSize="small" />}
+                        icon={<MenuBookIcon fontSize="medium" />}
                         label="Voir Storybook"
                     />
                 </Stack>

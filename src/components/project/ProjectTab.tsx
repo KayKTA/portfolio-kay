@@ -1,5 +1,5 @@
-import { AddCircleOutline, ArrowOutward, Info } from '@mui/icons-material';
-import { Stack, Box, Typography } from '@mui/material'
+import { ArrowOutward } from '@mui/icons-material';
+import { Box, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 
 interface ProjectTabProps {
@@ -25,7 +25,7 @@ export default function ProjectTab({
             component={motion.div}
             onClick={() => handleTabClick(index)}
             whileHover={{ scale: isActive ? 1 : 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            // whileTap={{ scale: 0.98 }}
             sx={{
                 cursor: "pointer",
                 bgcolor: isActive ? "primary.main" : "primary.light",

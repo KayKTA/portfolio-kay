@@ -19,7 +19,7 @@ export default function ExperienceDrawer({
                 height: isActive ? PREVIEW_HEIGHT : 0,
             }}
             transition={{
-                type: "spring",
+                // type: "spring",
                 stiffness: 300,
                 damping: 30,
             }}

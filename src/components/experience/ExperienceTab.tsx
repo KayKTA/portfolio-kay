@@ -27,7 +27,7 @@ export default function ExperienceTab({
             component={motion.div}
             onClick={() => handleTabClick(index)}
             whileHover={{ scale: isActive ? 1 : 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            // whileTap={{ scale: 0.98 }}
             sx={{
                 cursor: "pointer",
                 bgcolor: isActive ? "primary.main" : "primary.light",
