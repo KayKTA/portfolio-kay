@@ -1,24 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import { Box, Stack, Chip, Typography, IconButton, Button, Container } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import BaseRetroCard from "@/components/ui/BaseRetroCard";
-import Highlight from "@/components/ui/Highlight";
-import ProjectCard, { Project } from "../ui/ProjectCard";
+import { Project } from "@/components/project/ProjectCard";
+import Highlight from "../ui/Highlight";
+import ProjectAccordion from "../project/ProjectAccordion";
+import { Box, Container } from "@mui/material";
+import { CodeRounded, AirplanemodeActive, SmartToyRounded } from "@mui/icons-material";
 
-
-/* ===== Données projets ===== */
-
+/* ===== Projects Data ===== */
 const PROJECTS: Project[] = [
     {
         title: "Travel Story Maker",
-        tagline: "Assistant de journal de voyage • Web & IA",
+        icon: <AirplanemodeActive sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
+        tagline: "Journal de voyage augmenté • Médias, carte & IA",
         featured: true,
         description: [
-            <>Application qui centralise un voyage : photos, vidéos, texte et audio pour construire un <Highlight>journal de bord</Highlight> exploitable.</>,
-            <>Extraction des métadonnées <Highlight>EXIF</Highlight> pour afficher les médias sur une <Highlight>carte interactive</Highlight>.</>,
-            <>Option de dictée vocale + résumé généré avec <Highlight>IA / LLM</Highlight> pour raconter la journée.</>,
+            <>Application qui transforme photos, vidéos, texte et audio en <Highlight>journal de voyage structuré</Highlight> et exploitable.</>,
+            <>Centralisation des contenus autour d'une <Highlight>timeline</Highlight> et d'une <Highlight>carte interactive</Highlight> pour suivre un parcours.</>,
+            <>Extraction automatique des métadonnées <Highlight>EXIF</Highlight> pour géolocaliser les médias sans saisie manuelle.</>,
+            <>Ajout rapide de contenu via <Highlight>dictée vocale</Highlight> avec transcription et <Highlight>résumé généré par IA</Highlight>.</>,
+            <>Première brique vers un système de <Highlight>data storytelling</Highlight> (images + texte + contexte).</>,
+            <>Architecture pensée pour évoluer vers des fonctionnalités avancées (RAG, génération automatique de récits, reels).</>,
+            <>Déploiement et itérations rapides avec un focus sur <Highlight>UX simple</Highlight> et performance.</>,
         ],
         images: [
             "/projects/travel1.png",
@@ -26,94 +29,86 @@ const PROJECTS: Project[] = [
             "/projects/travel3.png",
             "/projects/travel4.png",
         ],
-        stack: ["Next.js", "React", "TypeScript", "Supabase", "OpenAI", "Map"],
+        stack: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Supabase (Auth, DB, Storage)",
+            "LLM (OpenAI API)",
+            "Leaflet",
+        ],
         liveUrl: "https://travel-story-maker.vercel.app/",
         repoUrl: "https://github.com/KayKTA/travel-story-maker",
     },
     {
         title: "AI Agent Customizer",
+        icon: <SmartToyRounded sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
         tagline: "Configuration d'agents IA • Web & outils internes",
         featured: false,
         description: [
-            <>Outil interne pour définir l'<Highlight>identité</Highlight>, le <Highlight>style</Highlight> et les <Highlight>domaines</Highlight> d'un agent conversationnel (nom, rôle, ton, niveau, règles).</>,
-            <>Génération automatique d'un <Highlight>system prompt</Highlight> + résumé lisible, prêts à être copiés dans une autre application (bot, outil interne, assistant produit…).</>,
-            <>Playground de chat et interface <Highlight>documentée dans Storybook</Highlight>.</>,
+            <>Outil permettant de configurer l'<Highlight>identité complète</Highlight> d'un agent IA (rôle, ton, règles, niveau, contraintes).</>,
+            <>Génération automatique d'un <Highlight>system prompt</Highlight> structuré et cohérent à partir des paramètres définis.</>,
+            <>Création d'un résumé <Highlight>human-readable</Highlight> pour faciliter la relecture et la validation côté produit.</>,
+            <>Playground de test pour simuler des conversations et itérer rapidement sur le comportement de l'agent.</>,
+            <>Gestion d'état claire et prévisible avec <Highlight>Zustand</Highlight>.</>,
+            <>Composants UI documentés dans <Highlight>Storybook</Highlight> (variants, states, guidelines).</>,
+            <>Projet pensé comme une <Highlight>brique réutilisable</Highlight> pour des outils internes ou des assistants produit.</>,
         ],
         images: [
-            "/projects/ai-agent-hero.png",          // hero / layout global
-            "/projects/ai-agent-prompt.png",   // form en 3 colonnes
-            "/projects/ai-agent-insight.png",      // carte prompt + résumé
-            "/projects/ai-agent-playground.png",    // chat / playground
+            "/projects/ai-agent-hero.png",
+            "/projects/ai-agent-prompt.png",
+            "/projects/ai-agent-insight.png",
+            "/projects/ai-agent-playground.png",
         ],
-        stack: [
-            "Next.js",
-            // "React",
-            "TypeScript",
-            // "MUI",
-            "Zustand",
-            // "Zod",
-            "Storybook",
-            "Vitest",
-            "OpenAI",
-        ],
+        stack: ["Next.js", "TypeScript", "Zustand", "Storybook", "Vitest", "OpenAI"],
         liveUrl: "https://ai-agent-customizer.vercel.app",
         repoUrl: "https://github.com/KayKTA/ai-agent-customizer",
         storybookUrl: "https://ai-agent-customizer-storybook.vercel.app",
-    }
-
-    // {
-    //     title: "Dashboard Data",
-    //     tagline: "Data storytelling & visualisation",
-    //     description: [
-    //         <>
-    //             Projet d'exploration de données présenté sous forme de{" "}
-    //             <Highlight>dashboard interactif</Highlight>.
-    //         </>,
-    //         <>
-    //             Analyse de jeux de données (films, sport, etc.) avec{" "}
-    //             <Highlight>Pandas</Highlight> et visualisation via des graphes
-    //             dynamiques.
-    //         </>,
-    //     ],
-    //     images: [
-    //         "/projects/dashboard-1.png",
-    //         "/projects/dashboard-2.png",
-    //     ],
-    //     stack: ["Python", "Pandas", "Jupyter", "Next.js", "Charts"],
-    //     repoUrl: "https://github.com/ton-user/dashboard-data",
-    // },
+    },
+    {
+        title: "Portfolio Website",
+        icon: <CodeRounded sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
+        tagline: "Slides interactives • Navigation immersive",
+        featured: false,
+        description: [
+            <>Portfolio conçu comme une <Highlight>présentation interactive</Highlight> : une section = un écran, navigation fluide.</>,
+            <>Architecture modulaire basée sur <Highlight>Next.js App Router</Highlight>.</>,
+            <>Création de composants UI réutilisables et cohérents.</>,
+            <>Animations et transitions avec <Highlight>Framer Motion</Highlight> pour renforcer l'expérience utilisateur.</>,
+            <>Design system documenté dans <Highlight>Storybook</Highlight> pour assurer la maintenabilité.</>,
+            <>Approche orientée lisibilité, performance et clarté du message.</>,
+        ],
+        images: ["/projects/portfolio1.png"],
+        stack: ["Next.js", "TypeScript", "MUI", "Framer Motion", "Storybook", "Vite (pour Storybook)"],
+        repoUrl: "https://github.com/KayKTA/portfolio-kay",
+        storybookUrl: "https://portfolio-kay-storybook.vercel.app",
+    },
 ];
 
-/* ===== Slide ===== */
 
+
+/* ===== SLIDE ===== */
 export default function ProjectsSlide() {
-    const featured = PROJECTS.find((p) => p.featured) ?? PROJECTS[0];
-    const others = PROJECTS.filter((p) => p !== featured);
 
     return (
         <SlideLayout
-            title="Projets"
+            title="Projets Récents"
             subtitle="Apps • Data • IA"
-            intro="Une sélection de projets persos où je teste des idées, des stacks et des concepts IA autour du produit."
+            // intro="Une sélection de projets persos où je teste des idées, des stacks et des concepts IA autour du produit."
         >
-            {/* <Container> */}
-                <Box
-                    sx={{
-                        width: "100%",
-                        display: "grid",
-                        gridTemplateColumns: { xs: "1fr 1fr" },
-                        gap: { xs: 2, md: 3 },
-                        alignItems: "stretch",
-                    }}
-                >
-                    <ProjectCard project={featured} />
-                    <Stack spacing={{ xs: 2, md: 3 }}>
-                        {others.map((p) => (
-                            <ProjectCard key={p.title} project={p} />
-                        ))}
-                    </Stack>
-                </Box>
-            {/* </Container> */}
+            {/* Wrapper pour donner une hauteur fixe à l'accordéon */}
+            <Box
+                sx={{
+                    flex: 1, // Prend tout l'espace disponible
+                    minHeight: 0, // Permet au flex child de shrink
+                    maxWidth: 1400,
+                    height: "100%",
+                    width: "100%",
+                    px: { xs: 2 },
+                }}
+            >
+                <ProjectAccordion projects={PROJECTS} />
+            </Box>
         </SlideLayout>
     );
 }

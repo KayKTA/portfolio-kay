@@ -32,6 +32,9 @@ export type BaseRetroCardProps = {
     bullets?: ReactNode[];
     bulletColor?: string;
     footer?: ReactNode;
+
+    /** Style de la carte */
+    variant?: "default" | "filled";
 };
 
 /**

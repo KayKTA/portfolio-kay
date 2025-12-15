@@ -1,9 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState, useCallback } from 'react'
-import { Box, IconButton } from '@mui/material'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import Hero from '@/components/sections/Hero'
 import Education from '@/components/sections/Education'
@@ -11,17 +8,20 @@ import Experience from '@/components/sections/Experiences'
 import Skills from '@/components/sections/Skills'
 import Contact from '@/components/sections/Contact'
 import Projects from '@/components/sections/Projects'
+import SlideNav from '@/components/layout/SlideNav'
 
 export default function HomePage() {
+    const [index, setIndex] = useState(0);
+
     const slides = useMemo(
         () => [
             <Hero
                 key="hero"
-                onContactClick={() => setIndex(slides.length - 1)}
+                onContactClick={() => setIndex(5)} // Index of Contact slide
             />,
             <Skills key="skills" />,
-            <Experience key="xp" />,
             <Projects key="projects" />,
+            <Experience key="xp" />,
             <Education key="edu" />,
             <Contact
                 key="contact"
@@ -31,9 +31,7 @@ export default function HomePage() {
             />,
         ],
         []
-    );
-
-    const [index, setIndex] = useState(0);
+    )
 
     useEffect(() => {
         const prevOverflow = document.body.style.overflow;
@@ -59,111 +57,12 @@ export default function HomePage() {
     }, [goNext, goPrev]);
 
     return (
-        <Box>
-            <Box
-                sx={{
-                    position: 'relative',
-                    width: '100vw',
-                    height: '100dvh',
-                    overflow: 'hidden',
-                    bgcolor: 'background.default',
-                    zIndex: 1,
-                }}
-            >
-                {/* Slides container */}
-                <Box
-                sx={{
-                    display: 'flex',
-                    width: `${slides.length * 100}dvw`,
-                    height: '100%',
-                    transform: `translateX(-${index * 100}dvw)`,
-                    transition: 'transform 420ms cubic-bezier(.2,.8,.2,1)',
-                }}
-                >
-                    {slides.map((slide) => (
-                        <Box
-                            key={slide.key ?? undefined}
-                            sx={{
-                                width: '100dvw',
-                                height: '100dvh',
-                                overflow: 'hidden',
-                                display: 'grid',
-                            }}
-                        >
-                            {slide}
-                        </Box>
-                    ))}
-                </Box>
-
-                {/* Bouton suivant */}
-                <IconButton
-                    aria-label="slide suivante"
-                    onClick={goNext}
-                    disabled={index === slides.length - 1}
-                    sx={{
-                        position: 'absolute',
-                        right: 8,
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        bgcolor: 'transparent',
-                        '&:disabled': { opacity: 0.2 },
-                        '& svg': { fontSize: 40, animation: 'pulseRight 1.2s infinite ease-in-out' },
-                        '@keyframes pulseRight': {
-                        '0%, 100%': { transform: 'translateX(0)' },
-                        '50%': { transform: 'translateX(6px)' },
-                        },
-                    }}
-                >
-                    <ChevronRightIcon />
-                </IconButton>
-
-                {/* Bouton précédent */}
-                <IconButton
-                    aria-label="slide précédente"
-                    onClick={goPrev}
-                    disabled={index === 0}
-                    sx={{
-                        position: 'absolute',
-                        left: 8,
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        bgcolor: 'transparent',
-                        '&:disabled': { opacity: 0.2 },
-                        '& svg': { fontSize: 40, animation: 'pulseLeft 1.2s infinite ease-in-out' },
-                        '@keyframes pulseLeft': {
-                            '0%, 100%': { transform: 'translateX(0)' },
-                            '50%': { transform: 'translateX(-6px)' },
-                        },
-                    }}
-                >
-                    <ChevronLeftIcon />
-                </IconButton>
-
-                {/* Indicateurs */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        bottom: 16,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        display: 'flex',
-                        gap: 1,
-                    }}
-                >
-                    {slides.map((_, i) => (
-                        <Box
-                            key={`dot-${i}`}
-                            sx={(theme) => ({
-                                width: i === index ? 28 : 8,
-                                height: 8,
-                                borderRadius: 999,
-                                transition: 'width .25s ease',
-                                bgcolor: i === index ? theme.palette.primary.main : theme.palette.divider,
-                            })}
-                        />
-                    ))}
-                </Box>
-            </Box>
-        </Box>
+        <SlideNav
+            slides={slides}
+            onIndexChange={setIndex}
+            currentIndex={index}
+            goNext={goNext}
+            goPrev={goPrev}
+        />
     )
 }

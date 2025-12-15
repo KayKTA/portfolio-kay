@@ -21,7 +21,7 @@ function ProjectCardStory(props: ProjectCardStoryProps) {
 }
 
 const meta: Meta<typeof ProjectCardStory> = {
-    title: 'UI/ProjectCard',
+    title: 'Project/ProjectCard',
     component: ProjectCardStory,
     tags: ['autodocs'],
     parameters: {

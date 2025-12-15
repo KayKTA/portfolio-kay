@@ -77,7 +77,7 @@ export default function Skills() {
             >
                 {/* Main Stack */}
                 <MainStackCard
-                    intro="Je conçois des applications web modernes de bout en bout : interfaces React, apps Next.js en production et APIs Node.js robustes. J'ai également de l'expérience avec des outils Data (Pandas, Numpy, Scikit-learn) pour l'exploration et la visualisation."
+                    intro="Je conçois des applications web modernes de bout en bout : interfaces React, apps Next.js en production et APIs Node.js robustes. J'ai également de l'expérience avec des outils Data (Pandas, Numpy, Scikit-learn) pour l'exploration et la visualisation et l’intégration de fonctionnalités intelligentes dans des produits web."
                     mainStack={CORE_STACK}
                 />
                 {/* Grille à 2 colonnes */}
