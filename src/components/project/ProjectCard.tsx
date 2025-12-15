@@ -8,6 +8,7 @@ import { ProjectImagesCarousel } from "./ProjectImagesCarousel";
 import CodeIcon from "@mui/icons-material/Code";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { Public } from "@mui/icons-material";
+import RetroTooltip from "../ui/RetroTooltip";
 
 export type Project = {
     title: string;
@@ -33,7 +34,7 @@ function ProjectIconButton({ href, icon, label }: ProjectIconButtonProps) {
     if (!href) return null;
 
     return (
-        <Tooltip title={label} arrow>
+        <RetroTooltip title={label} placement="top" arrow>
             <IconButton
                 component="a"
                 href={href}
@@ -60,7 +61,7 @@ function ProjectIconButton({ href, icon, label }: ProjectIconButtonProps) {
             >
                 {icon}
             </IconButton>
-        </Tooltip>
+        </RetroTooltip>
     );
 }
 
