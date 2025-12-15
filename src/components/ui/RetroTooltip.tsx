@@ -13,7 +13,7 @@ const RetroTooltip = styled(({ className, ...props }: TooltipProps) => (
         // textTransform: "uppercase",
         // padding: "8px 12px",
         // border: `3px solid ${theme.palette.text.primary}`,
-        boxShadow: "4px 4px 0 rgba(0, 0, 0, 0.3)",
+        // boxShadow: "4px 4px 0 rgba(0, 0, 0, 0.3)",
         fontFamily: theme.typography.fontFamily,
     },
     [`& .${tooltipClasses.arrow}`]: {
