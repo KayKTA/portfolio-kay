@@ -5,7 +5,7 @@ import { Project } from "@/components/project/ProjectCard";
 import Highlight from "../ui/Highlight";
 import ProjectAccordion from "../project/ProjectAccordion";
 import { Box, Container } from "@mui/material";
-import { CodeRounded, AirplanemodeActive, SmartToyRounded } from "@mui/icons-material";
+import { CodeRounded, AirplanemodeActive, SmartToyRounded, DashboardCustomize } from "@mui/icons-material";
 
 /* ===== Projects Data ===== */
 const PROJECTS: Project[] = [
@@ -33,7 +33,7 @@ const PROJECTS: Project[] = [
             "Next.js",
             "React",
             "TypeScript",
-            "Supabase (Auth, DB, Storage)",
+            "Supabase",
             "LLM (OpenAI API)",
             "Leaflet",
         ],
@@ -60,14 +60,14 @@ const PROJECTS: Project[] = [
             "/projects/ai-agent-insight.png",
             "/projects/ai-agent-playground.png",
         ],
-        stack: ["Next.js", "TypeScript", "Zustand", "Storybook", "Vitest", "OpenAI"],
+        stack: ["Next.js", "TypeScript", "Zustand", "Storybook", "Vitest", "OpenAI", "Ollama"],
         liveUrl: "https://ai-agent-customizer.vercel.app",
         repoUrl: "https://github.com/KayKTA/ai-agent-customizer",
         storybookUrl: "https://ai-agent-customizer-storybook.vercel.app",
     },
     {
         title: "Portfolio Website",
-        icon: <CodeRounded sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
+        icon: <DashboardCustomize sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
         tagline: "Slides interactives • Navigation immersive",
         featured: false,
         description: [

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack, IconButton, Typography } from "@mui/material";
+import { Box, Stack, IconButton, Typography, Tooltip } from "@mui/material";
 import { useState } from "react";
 import WindowCard from "../ui/WindowCard";
 import { SimpleChip } from "../ui/RetroChip";
@@ -33,32 +33,34 @@ function ProjectIconButton({ href, icon, label }: ProjectIconButtonProps) {
     if (!href) return null;
 
     return (
-        <IconButton
-            component="a"
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={label}
-            sx={{
-                width: 44,
-                height: 44,
-                borderRadius: 0,
-                border: "3px solid",
-                borderColor: "primary.main",
-                bgcolor: "background.default",
-                color: "primary.main",
-                boxShadow: "3px 3px 0 rgba(0,0,0,0.2)",
-                transition: "all .15s ease",
-                "&:hover": {
-                    bgcolor: "primary.main",
-                    color: "background.default",
-                    transform: "translate(-2px, -2px)",
-                    boxShadow: "5px 5px 0 rgba(0,0,0,0.25)",
-                },
-            }}
-        >
-            {icon}
-        </IconButton>
+        <Tooltip title={label} arrow>
+            <IconButton
+                component="a"
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                sx={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 0,
+                    border: "3px solid",
+                    borderColor: "primary.main",
+                    bgcolor: "background.default",
+                    color: "primary.main",
+                    boxShadow: "3px 3px 0 rgba(0,0,0,0.2)",
+                    transition: "all .15s ease",
+                    "&:hover": {
+                        bgcolor: "primary.main",
+                        color: "background.default",
+                        transform: "translate(-2px, -2px)",
+                        boxShadow: "5px 5px 0 rgba(0,0,0,0.25)",
+                    },
+                }}
+            >
+                {icon}
+            </IconButton>
+        </Tooltip>
     );
 }
 

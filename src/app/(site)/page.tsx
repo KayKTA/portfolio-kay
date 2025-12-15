@@ -19,8 +19,8 @@ export default function HomePage() {
                 key="hero"
                 onContactClick={() => setIndex(5)} // Index of Contact slide
             />,
-            <Skills key="skills" />,
             <Projects key="projects" />,
+            <Skills key="skills" />,
             <Experience key="xp" />,
             <Education key="edu" />,
             <Contact
