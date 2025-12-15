@@ -2,7 +2,7 @@ import { Meta, StoryObj} from "@storybook/react";
 import { ProjectImagesCarousel } from "./ProjectImagesCarousel";
 
 const meta: Meta<typeof ProjectImagesCarousel> = {
-    title: "Project/ProjectImagesCarousel",
+    title: "Domains/ProjectImagesCarousel",
     component: ProjectImagesCarousel,
     tags: ["autodocs"],
     parameters: {

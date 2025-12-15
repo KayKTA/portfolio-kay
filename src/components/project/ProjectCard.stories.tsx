@@ -1,19 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProjectCard, { Project } from './ProjectCard';
+import ProjectCard from './ProjectCard';
+import { PROJECT_1, PROJECT_2 } from '@/lib/samples';
+import { Project } from '@/lib/types';
 
-const baseProject: Project = {
-    title: 'Travel Story Maker',
-    tagline: 'Automate my travel stories',
-    description: [
-        "Import travel steps (Polarsteps, etc.)",
-        "Generate interactive timeline + map",
-        "Prepare scripts for Reels / TikTok",
-    ],
-    stack: ['Next.js', 'TypeScript', 'Supabase', 'Mapbox', 'OpenAI'],
-    featured: true,
-    liveUrl: 'https://kay-kta.vercel.app',
-    images: ['/projects/travel1.png', '/projects/travel2.png'],
-};
+const baseProject = PROJECT_1;
 type ProjectCardStoryProps = Project;
 
 function ProjectCardStory(props: ProjectCardStoryProps) {
@@ -21,7 +11,7 @@ function ProjectCardStory(props: ProjectCardStoryProps) {
 }
 
 const meta: Meta<typeof ProjectCardStory> = {
-    title: 'Project/ProjectCard',
+    title: 'Domains/ProjectCard',
     component: ProjectCardStory,
     tags: ['autodocs'],
     parameters: {
@@ -83,39 +73,8 @@ type Story = StoryObj<typeof ProjectCardStory>;
 
 export const Default: Story = {};
 
-// export const WithoutStack: Story = {
-//     args: {
-//         ...baseProject,
-//         stack: undefined,
-//         tagline: "Data-viz prototype under construction",
-
-//     },
-//     parameters: {
-//         docs: {
-//             description: {
-//                 story: 'Displays a card without the technology stack.',
-//             },
-//         },
-//     },
-// };
-
 export const WithMultipleLinks: Story = {
-    args: {
-        ...baseProject,
-        title: 'Mood Recipes',
-        tagline: 'Recipes based on your mood',
-        description: [
-            "Choose your mood and I suggest a recipe",
-            "Design system with Storybook on the frontend",
-            "NestJS backend with Swagger & validation",
-        ],
-        stack: ['React', 'NestJS', 'Storybook'],
-        featured: false,
-        liveUrl: 'https://mood-recipes.vercel.app',
-        repoUrl: 'https://mood-recipes.vercel.app',
-        storybookUrl: 'https://mood-recipes.vercel.app',
-        images: ['/projects/mood-recipes1.jpg', '/projects/mood-recipes2.png'],
-    },
+    args: PROJECT_2,
     parameters: {
         docs: {
             description: {

@@ -9,7 +9,7 @@ function RetroChipStory(props: RetroChipStoryProps) {
 }
 
 const meta: Meta<typeof RetroChipStory> = {
-    title: 'UI/RetroChip',
+    title: 'Primitives/RetroChip',
     component: RetroChipStory,
     tags: ['autodocs'],
     parameters: {

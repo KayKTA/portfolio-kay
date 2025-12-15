@@ -1,11 +1,11 @@
 "use client";
 
 import SlideLayout from "@/components/layout/SlideLayout";
-import { Project } from "@/components/project/ProjectCard";
+import type { Project } from "@/lib/types";
 import Highlight from "../ui/Highlight";
-import ProjectAccordion from "../project/ProjectAccordion";
-import { Box, Container } from "@mui/material";
-import { CodeRounded, AirplanemodeActive, SmartToyRounded, DashboardCustomize } from "@mui/icons-material";
+import { Box } from "@mui/material";
+import { AirplanemodeActive, SmartToyRounded, DashboardCustomize } from "@mui/icons-material";
+import Accordion from "@/components/ui/Accordion";
 
 /* ===== Projects Data ===== */
 const PROJECTS: Project[] = [
@@ -107,7 +107,8 @@ export default function ProjectsSlide() {
                     px: { xs: 2 },
                 }}
             >
-                <ProjectAccordion projects={PROJECTS} />
+                {/* <ProjectAccordion projects={PROJECTS} /> */}
+                <Accordion datas={PROJECTS} />
             </Box>
         </SlideLayout>
     );

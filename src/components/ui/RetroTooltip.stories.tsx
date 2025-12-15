@@ -3,7 +3,7 @@ import RetroTooltip from "./RetroTooltip";
 import { Button, Stack } from "@mui/material";
 
 const meta: Meta<typeof RetroTooltip> = {
-    title: "UI/RetroTooltip",
+    title: "Primitives/RetroTooltip",
     component: RetroTooltip,
     tags: ["autodocs"],
     parameters: {

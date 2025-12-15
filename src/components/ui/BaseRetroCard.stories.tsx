@@ -3,7 +3,7 @@ import BaseRetroCard from './BaseRetroCard';
 import { Typography } from '@mui/material';
 
 const meta: Meta<typeof BaseRetroCard> = {
-    title: 'UI/BaseRetroCard',
+    title: 'Surfaces/RetroCard',
     component: BaseRetroCard,
     tags: ['autodocs'],
     parameters: {

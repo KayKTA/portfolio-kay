@@ -173,7 +173,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                 }}
                             >
                                 <Typography sx={{ fontWeight: 700, fontSize: "0.85rem" }}>
-                                    ✨ Disponible
+                                    #OPENTOWORK
                                 </Typography>
                             </Box>
 
@@ -185,7 +185,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                     textTransform: "uppercase",
                                     letterSpacing: -1.5,
                                     lineHeight: 1.1,
-                                    fontSize: { xs: "12vw", md: "4.5rem" },
+                                    fontSize: { xs: "12vw", md: "3.2rem" },
                                 }}
                             >
                                 Je transforme vos{" "}

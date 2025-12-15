@@ -1,8 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import ExperienceAccordion from "@/components/experience/ExperienceAccordion";
 import Highlight from "@/components/ui/Highlight";
-import type { Experience } from "@/components/experience/types";
+import type { Experience } from "@/lib/types";
+import Accordion from "@/components/ui/Accordion";
 
 const EXPERIENCES: Experience[] = [
     {
@@ -20,7 +20,7 @@ const EXPERIENCES: Experience[] = [
             <>Implémentation complète via <Highlight>Supabase</Highlight> (authentification, base de données, stockage, règles de sécurité).</>,
             <>Intégration de fonctionnalités <Highlight>Data & IA</Highlight> : automatisations, génération de contenus, extraction de métadonnées (EXIF, audio), expérimentation LLM.</>,
             <>Déploiement, monitoring et optimisation des performances sur <Highlight>Vercel</Highlight> (CI/CD, SEO, Core Web Vitals).</>,
-            <>Gestion du cycle projet de bout en bout : cadrage, <Highlight>UX/UI</Highlight>, développement, itérations et mise en production.</>,
+            // <>Gestion du cycle projet de bout en bout : cadrage, <Highlight>UX/UI</Highlight>, développement, itérations et mise en production.</>,
         ],
         stack: [
             "Next.js",
@@ -45,15 +45,15 @@ const EXPERIENCES: Experience[] = [
             Pendant 6 ans chez MyJouleBox, j'ai contribué au développement d'outils web et mobiles critiques pour la gestion des équipements solaires en Afrique, avec un focus sur la robustesse et l'expérience utilisateur.
         </span>,
         bullets: [
-            <>Développement <Highlight>end-to-end</Highlight> d'applications web et outils internes utilisés quotidiennement sur le terrain (React, Node.js, Go).</>,
+            <>Développement <Highlight>end-to-end</Highlight> d'applications et outils internes utilisés quotidiennement sur le terrain (React, Node, Go).</>,
             <>Conception et maintenance d'<Highlight>APIs métier</Highlight> pour la gestion des équipements solaires, des clients et de la logistique.</>,
-            <>Mise en place d'architectures <Highlight>offline-first</Highlight> adaptées aux zones à faible connectivité.</>,
+            // <>Mise en place d'architectures <Highlight>offline-first</Highlight> adaptées aux zones à faible connectivité.</>,
             <>Optimisation des <Highlight>performances</Highlight> et de la fiabilité (synchronisation, requêtes, rendu React).</>,
             <>Collaboration étroite avec les <Highlight>équipes terrain</Highlight> en Afrique (recueil des besoins, priorisation produit, itérations).</>,
-            <>Analyse et résolution de <Highlight>bugs critiques</Highlight> impactant directement l'exploitation sur le terrain.</>,
-            <>Participation active aux <Highlight>refontes UI/UX</Highlight> d'outils métier.</>,
+            // <>Analyse et résolution de <Highlight>bugs critiques</Highlight> impactant directement l'exploitation sur le terrain.</>,
+            // <>Participation active aux <Highlight>refontes UI/UX</Highlight> d'outils métier.</>,
             <>Gestion et structuration des données dans <Highlight>Couchbase</Highlight> et services back-end en Go / Node.js.</>,
-            <>Mise en place de pratiques qualité : <Highlight>code review</Highlight>, tests et accompagnement de développeur·ses junior.</>,
+            <><Highlight>Encadrement</Highlight> et accompagnement de développeur·ses junior.</>,
         ],
         stack: ["React", "Node.js", "Go", "Couchbase", "React Native", "Git"],
         logo: "/logos/mjb.jpeg",
@@ -84,7 +84,7 @@ export default function ExperienceSlide() {
                         width: "100%",
                     }}
                 >
-                    <ExperienceAccordion experiences={EXPERIENCES} />
+                    <Accordion datas={EXPERIENCES} />
                 </Box>
             </Container>
         </SlideLayout>

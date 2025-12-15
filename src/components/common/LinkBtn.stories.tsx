@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LinkBtn from './LinkBtn';
 
 const meta: Meta<typeof LinkBtn> = {
-    title: 'Ui/LinkButton',
+    title: 'Primitives/LinkButton',
     component: LinkBtn,
     tags: ['autodocs'],
     parameters: {

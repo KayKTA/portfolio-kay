@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PostIt } from './PostIt';
 
 const meta: Meta<typeof PostIt> = {
-    title: 'UI/PostIt',
+    title: 'Surfaces/PostIt',
     component: PostIt,
     tags: ['autodocs'],
     parameters: {

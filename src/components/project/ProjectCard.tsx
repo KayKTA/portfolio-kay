@@ -9,19 +9,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { Public } from "@mui/icons-material";
 import RetroTooltip from "../ui/RetroTooltip";
-
-export type Project = {
-    title: string;
-    tagline?: string;
-    description?: React.ReactNode[];
-    images: string[];
-    stack?: string[];
-    liveUrl?: string;
-    repoUrl?: string;
-    storybookUrl?: string;
-    featured?: boolean;
-    icon?: React.ReactNode;
-};
+import { Project } from "@/lib/types";
 
 /* ===== Icon Button Component ===== */
 type ProjectIconButtonProps = {

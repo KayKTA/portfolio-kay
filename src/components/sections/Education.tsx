@@ -82,10 +82,10 @@ const FORMATIONS: Formation[] = [
                 Gestion de bases de données{" "}
                 <Highlight>SQL/NoSQL</Highlight>.
             </>,
-            <>
-                Projets en équipe avec méthodologie{" "}
-                <Highlight>agile</Highlight>.
-            </>,
+            // <>
+            //     Projets en équipe avec méthodologie{" "}
+            //     <Highlight>agile</Highlight>.
+            // </>,
         ],
         techs: ["JavaScript", "PHP", "Node.js", "SQL", "NoSQL", "C", "Git"],
         logo: "/logos/coding.png",
@@ -165,7 +165,7 @@ export default function EducationRetroSlide() {
             intro="J'ai commencé à coder en autodidacte, puis j'ai consolidé mes compétences avec plusieurs formations intensives."
         >
             <Box sx={{ width: "100%" }}>
-                <Grid container spacing={3}>
+                <Grid container spacing={1.5} maxWidth="lg" mx="auto" >
                     {FORMATIONS_LARGE.map((formation) => (
                         <Grid key={formation.title} size={{ xs: 12 }}>
                             <FormationCard formation={formation} />

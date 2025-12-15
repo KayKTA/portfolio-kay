@@ -22,7 +22,7 @@ export default function WindowCard({ children, sx }: { children: React.ReactNode
                 // bgcolor: "#8F2A1E",
                 boxShadow: "12px 12px 0 rgba(0,0,0,0.25)",
                 px: { xs: 3, md: 6 },
-                py: { xs: 4, md: 6 },
+                py: { xs: 4, md: 4 },
             }}
         >
             {/* pastilles type fenêtre */}

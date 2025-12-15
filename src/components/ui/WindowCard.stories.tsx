@@ -3,7 +3,7 @@ import WindowCard from "./WindowCard";
 import { Box, Typography } from "@mui/material";
 
 const meta: Meta<typeof WindowCard> = {
-    title: "UI/WindowCard",
+    title: "Surfaces/WindowCard",
     component: WindowCard,
     tags: ["autodocs"],
     parameters: {
