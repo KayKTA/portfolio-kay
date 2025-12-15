@@ -123,7 +123,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                         position: "absolute",
                                         top: -20,
                                         right: -20,
-                                        bgcolor: "#eeb631ff",
+                                        bgcolor: "#FFD966",
                                         border: "3px solid",
                                         borderColor: "text.primary",
                                         px: 2,
@@ -139,7 +139,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                             textTransform: "uppercase",
                                         }}
                                     >
-                                        Disponible
+                                        #Opentowork
                                     </Typography>
                                 </Box>
                             </Box>
@@ -188,7 +188,7 @@ export default function HeroSplitLayout({ onContactClick }: HeroProps) {
                                     fontSize: { xs: "12vw", md: "4.5rem" },
                                 }}
                             >
-                                Je transforme des{" "}
+                                Je transforme vos{" "}
                                 <Box
                                     component="span"
                                     sx={{

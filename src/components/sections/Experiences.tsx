@@ -1,28 +1,19 @@
-import { Box, Chip, Stack, Typography } from "@mui/material";
-import type { ReactNode } from "react";
+import { Box, Container, Typography } from "@mui/material";
 import SlideLayout from "@/components/layout/SlideLayout";
-import BaseRetroCard from "@/components/ui/BaseRetroCard";
+import ExperienceAccordion from "@/components/experience/ExperienceAccordion";
 import Highlight from "@/components/ui/Highlight";
-
-type Experience = {
-    company: string;
-    role: string;
-    period: string;
-    location?: string;
-    tagline?: string;
-    bullets?: ReactNode[];   // ⬅️ important
-    stack?: string[];
-    logo?: string;
-    featured?: boolean;
-};
+import type { Experience } from "@/components/experience/types";
 
 const EXPERIENCES: Experience[] = [
     {
         company: "Freelance",
         role: "Développeuse Web Fullstack & Data / IA",
         period: "2024 - 2025",
-        location: "Paris / Remote",
-        tagline: "Conception de produits web et IA orientés usage, de l'idée à la mise en production.",
+        location: "Paris / 'Remote",
+        tagline:
+        <span>
+            En tant que développeuse indépendante, j'ai réalisé plusieurs projets web centrés sur Next.js, Supabase et l'intégration de technologies d'IA générative.
+        </span>,
         bullets: [
             <>Conception et développement d'applications <Highlight>fullstack</Highlight> avec <Highlight>React</Highlight>, <Highlight>Next.js</Highlight> et <Highlight>Node.js</Highlight>, orientées produit.</>,
             <>Réalisation de projets concrets (Travel Story Maker, dashboards data, mini-apps interactives) avec un fort focus <Highlight>UX & usages réels</Highlight>.</>,
@@ -48,7 +39,11 @@ const EXPERIENCES: Experience[] = [
         role: "Développeuse Fullstack JavaScript",
         period: "2018 - 2024",
         location: "Paris",
-        tagline: "Startup solaire hors-réseau – solutions digitales pour le terrain en Afrique",
+        // tagline: "Startup solaire hors-réseau — solutions digitales pour le terrain en Afrique",
+        tagline:
+        <span>
+            Pendant 6 ans chez MyJouleBox, j'ai contribué au développement d'outils web et mobiles critiques pour la gestion des équipements solaires en Afrique, avec un focus sur la robustesse et l'expérience utilisateur.
+        </span>,
         bullets: [
             <>Développement <Highlight>end-to-end</Highlight> d'applications web et outils internes utilisés quotidiennement sur le terrain (React, Node.js, Go).</>,
             <>Conception et maintenance d'<Highlight>APIs métier</Highlight> pour la gestion des équipements solaires, des clients et de la logistique.</>,
@@ -64,179 +59,34 @@ const EXPERIENCES: Experience[] = [
         logo: "/logos/mjb.jpeg",
         featured: true,
     },
-    // {
-    //     company: "MyJouleBox",
-    //     role: "Développeuse Web — Stage",
-    //     period: "2018",
-    //     location: "Paris",
-    //     tagline: "Première immersion dans l'écosystème produit & solaire de MyJouleBox.",
-    //     bullets: [
-    //         <>
-    //             Refonte de l'application principale de{" "}
-    //             <Highlight>suivi énergétique</Highlight>{" "}
-    //             (UI/UX + implémentation front).
-    //         </>,
-    //         <>
-    //             Développement de {" "}
-    //             <Highlight>fonctionnalités front</Highlight>{" "}
-    //             React.
-    //         </>,
-    //         <>
-    //             Maintenance et support d'une application mobile en{" "}
-    //             <Highlight>React Native</Highlight>.
-    //         </>,
-    //     ],
-    //     stack: ["React", "React Native", "JavaScript", "Git"],
-    //     logo: "/logos/mjb.jpeg",
-    // },
-    //   {
-    //     company: "Accueil de loisirs St Médard",
-    //     role: "Coordinatrice des activités",
-    //     period: "2014 - 2016",
-    //     location: "Paris",
-    //     tagline: "Structure d'accueil de loisirs pour enfants et adolescents (3 à 16 ans).",
-    //     bullets: [
-    //       <>
-    //         Organisation et <Highlight>planification</Highlight>{" "}
-    //         d'activités adaptées aux différents âges.
-    //       </>,
-    //       <>
-    //         <Highlight>Coordination d'équipe</Highlight>{" "}
-    //         d'animateurs·rices.
-    //       </>,
-    //       <>
-    //         Gestion de <Highlight>plannings</Highlight>{" "}
-    //         et de <Highlight>budgets d'animation</Highlight>.
-    //       </>,
-    //     ],
-    //     stack: ["Gestion", "Organisation", "Encadrement", "Pédagogie"],
-    //     logo: "/logos/mjsm.png",
-    //   },
 ];
 
-
-/* ---------- Sous-titre dédié aux expériences ---------- */
-
-type ExperienceSubtitleProps = {
-    company: string;
-    period: string;
-    location?: string;
-};
-
-function ExperienceSubtitle({
-    company,
-    period,
-    location,
-}: ExperienceSubtitleProps) {
-    const meta = [period, location].filter(Boolean).join(" • ");
-
-    return (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 0.25 }}>
-            <Typography
-                component="div"
-                sx={{
-                    fontWeight: 800,
-                    textTransform: "uppercase",
-                    letterSpacing: 0.5,
-                    fontSize: "0.9rem",
-                }}
-            >
-                {company}
-            </Typography>
-
-            {/* Ligne période + lieu */}
-            <Typography
-                component="div"
-                sx={{
-                    fontWeight: 600,
-                    fontSize: "0.8rem",
-                    color: "text.secondary",
-                }}
-            >
-                {meta}
-            </Typography>
-        </Box>
-    );
-}
-
-/* ---------- Carte expérience ---------- */
-
-function ExperienceCard({ experience }: { experience: Experience }) {
-    return (
-        <BaseRetroCard
-            header={{
-                logo: experience.logo,
-                logoAlt: experience.company,
-                title: experience.role,
-                subtitle: (
-                    <ExperienceSubtitle
-                        company={experience.company}
-                        period={experience.period}
-                        location={experience.location}
-                    />
-                ),
-            }}
-            intro={experience.tagline}
-            bullets={experience.bullets}
-        >
-            {experience.stack && experience.stack.length > 0 && (
-                <Stack
-                    direction="row"
-                    spacing={1}
-                    flexWrap="wrap"
-                    useFlexGap
-                    sx={{ mt: "auto" }}
-                >
-                    {experience.stack.map((t) => (
-                        <Chip
-                            key={t}
-                            label={t}
-                            size="small"
-                            variant="outlined"
-                            sx={{
-                                border: "2px solid",
-                                borderColor: "primary.main",
-                                borderRadius: 1,
-                                bgcolor: "background.paper",
-                                height: 24,
-                                fontWeight: 700,
-                                "& .MuiChip-label": { px: 1 },
-                            }}
-                        />
-                    ))}
-                </Stack>
-            )}
-        </BaseRetroCard>
-    );
-}
-
 export default function ExperienceSlide() {
-    const featured = EXPERIENCES.find((e) => e.featured) ?? EXPERIENCES[0];
-    const others = EXPERIENCES.filter((e) => e !== featured);
-
     return (
         <SlideLayout
             title="Expériences"
             subtitle="Produits web modernes, performance & sens du détail"
             intro="Après 6 ans en startup, le freelance m'a permis d'élargir mon champ d'action : web, data, IA et projets orientés produit."
         >
-            <Box
+            <Container
+                maxWidth="lg"
                 sx={{
-                    width: "100%",
-                    // maxWidth: 1200,
-                    display: "grid",
-                    gridTemplateColumns: { xs: "1fr", md: "0.9fr 1.1fr" },
-                    gap: { xs: 2, md: 3 },
-                    alignItems: "stretch",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    py: 2,
                 }}
             >
-                <ExperienceCard experience={featured} />
-                <Stack spacing={{ xs: 2, md: 3 }}>
-                    {others.map((e) => (
-                        <ExperienceCard key={e.company + e.period} experience={e} />
-                    ))}
-                </Stack>
-            </Box>
+                <Box
+                    sx={{
+                        flex: 1,
+                        minHeight: 0,
+                        width: "100%",
+                    }}
+                >
+                    <ExperienceAccordion experiences={EXPERIENCES} />
+                </Box>
+            </Container>
         </SlideLayout>
     );
 }

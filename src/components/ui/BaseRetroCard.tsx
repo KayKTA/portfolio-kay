@@ -27,6 +27,7 @@ export type BaseRetroCardProps = {
 
     /** Section d'introduction/tagline */
     intro?: ReactNode;
+    introXP?: ReactNode; // Nouvelle section d'introduction pour ExperienceTab.tsx
 
     /** Liste à puces avec étoiles */
     bullets?: ReactNode[];
@@ -47,6 +48,7 @@ export default function BaseRetroCard({
     badge,
     header,
     intro,
+    introXP,
     bullets,
     bulletColor = "#AE2B1F",
     footer
@@ -173,6 +175,13 @@ export default function BaseRetroCard({
                 <Typography variant="body2" sx={{ fontWeight: 700, color: "text.primary", fontSize: "0.95rem" }}>
                     {intro}
                 </Typography>
+            )}
+            {introXP && (
+                <Box sx={{ my: 1, mr: 30 }} >
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: "text.primary", fontSize: "0.95rem" }}>
+                        {introXP}
+                    </Typography>
+                </Box>
             )}
 
             {/* Liste à puces avec étoiles */}
