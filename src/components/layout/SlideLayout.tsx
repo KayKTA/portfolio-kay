@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, useMediaQuery, useTheme, Typography, Container } from "@mui/material";
 import { PropsWithChildren } from "react";
 
 interface SlideLayoutProps {
@@ -18,6 +18,9 @@ export default function SlideLayout({
     id,
     children,
 }: PropsWithChildren<SlideLayoutProps>) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
     return (
         <Box
             id={id} // ⬅️ ancre pour #contact, #skills, etc.
@@ -103,7 +106,7 @@ export default function SlideLayout({
                 {headerExtra}
             </Box>
 
-            {intro && (
+            {!isMobile && intro && (
                 <Box
                     sx={{
                         position: { xs: "relative", md: "absolute" },
@@ -129,18 +132,25 @@ export default function SlideLayout({
             )}
 
             <Container
+                id="slide-content"
                 maxWidth="xl"
                 sx={{
                     position: "relative",
                     zIndex: 10,
                     flex: 1,
                     height: "80vh",
-                    display: "flex",
+                    display: isMobile ? "block" : "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     py: { xs: 3, md: 1 },
-                    pb: { xs: 6, md: 1 },
-                    mb: { xs: 6, md: 2},
+                    pb: { xs: 3, md: 1 },
+                    mb: { xs: 6, md: 2 },
+                    // border: "3px solid",
+                    // borderColor: "primary.main",
+                    // bgcolor: "background.paper",
+                    // boxShadow: "5px 5px 0 rgba(0,0,0,0.2)",
+                    overflow: "auto",
+
                 }}
             >
                 {children}

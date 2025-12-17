@@ -9,11 +9,11 @@ const EXPERIENCES: Experience[] = [
         company: "Freelance",
         role: "Développeuse Web Fullstack & Data / IA",
         period: "2024 - 2025",
-        location: "Paris / 'Remote",
+        location: "Paris / Remote",
         tagline:
-        <span>
-            En tant que développeuse indépendante, j'ai réalisé plusieurs projets web centrés sur Next.js, Supabase et l'intégration de technologies d'IA générative.
-        </span>,
+            <span>
+                En tant que développeuse indépendante, j'ai réalisé plusieurs projets web centrés sur Next.js, Supabase et l'intégration de technologies d'IA générative.
+            </span>,
         bullets: [
             <>Conception et développement d'applications <Highlight>fullstack</Highlight> avec <Highlight>React</Highlight>, <Highlight>Next.js</Highlight> et <Highlight>Node.js</Highlight>, orientées produit.</>,
             <>Réalisation de projets concrets (Travel Story Maker, dashboards data, mini-apps interactives) avec un fort focus <Highlight>UX & usages réels</Highlight>.</>,
@@ -41,9 +41,9 @@ const EXPERIENCES: Experience[] = [
         location: "Paris",
         // tagline: "Startup solaire hors-réseau — solutions digitales pour le terrain en Afrique",
         tagline:
-        <span>
-            Pendant 6 ans chez MyJouleBox, j'ai contribué au développement d'outils web et mobiles critiques pour la gestion des équipements solaires en Afrique, avec un focus sur la robustesse et l'expérience utilisateur.
-        </span>,
+            <span>
+                Pendant 6 ans chez MyJouleBox, j'ai contribué au développement d'outils web et mobiles critiques pour la gestion des équipements solaires en Afrique, avec un focus sur la robustesse et l'expérience utilisateur.
+            </span>,
         bullets: [
             <>Développement <Highlight>end-to-end</Highlight> d'applications et outils internes utilisés quotidiennement sur le terrain (React, Node, Go).</>,
             <>Conception et maintenance d'<Highlight>APIs métier</Highlight> pour la gestion des équipements solaires, des clients et de la logistique.</>,
@@ -68,25 +68,20 @@ export default function ExperienceSlide() {
             subtitle="Produits web modernes, performance & sens du détail"
             intro="Après 6 ans en startup, le freelance m'a permis d'élargir mon champ d'action : web, data, IA et projets orientés produit."
         >
-            <Container
-                maxWidth="lg"
+            <Box
+                id="experience-accordion-wrapper"
                 sx={{
+                    flex: 1, // Take remaining space
+                    minHeight: 0, // Prevent overflow issues
+                    maxWidth: 1200,
                     height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    py: 2,
+                    width: "100%",
+                    px: { xs: 1 }
+
                 }}
             >
-                <Box
-                    sx={{
-                        flex: 1,
-                        minHeight: 0,
-                        width: "100%",
-                    }}
-                >
-                    <Accordion datas={EXPERIENCES} />
-                </Box>
-            </Container>
+                <Accordion datas={EXPERIENCES} />
+            </Box>
         </SlideLayout>
     );
 }

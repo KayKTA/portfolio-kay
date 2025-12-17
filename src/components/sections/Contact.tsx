@@ -29,8 +29,9 @@ export default function ContactEnhanced({
                 maxWidth="lg"
                 sx={{
                     height: "100%",
-                    display: "flex",
+                    display: { xs: "block", md: "flex" },
                     alignItems: "center",
+                    px: { xs: 5}
                 }}
             >
                 <Box sx={{ width: "100%" }}>
@@ -72,7 +73,7 @@ export default function ContactEnhanced({
                                         letterSpacing: 1,
                                     }}
                                 >
-                                    ✨ Disponible immédiatement
+                                    Disponible immédiatement
                                 </Typography>
                             </Box>
 

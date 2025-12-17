@@ -4,7 +4,7 @@ import SlideLayout from "@/components/layout/SlideLayout";
 import type { Project } from "@/lib/types";
 import Highlight from "../ui/Highlight";
 import { Box } from "@mui/material";
-import { AirplanemodeActive, SmartToyRounded, DashboardCustomize } from "@mui/icons-material";
+import { AirplanemodeActive, SmartToyRounded, DashboardCustomize, SmartToyOutlined } from "@mui/icons-material";
 import Accordion from "@/components/ui/Accordion";
 
 /* ===== Projects Data ===== */
@@ -42,7 +42,7 @@ const PROJECTS: Project[] = [
     },
     {
         title: "AI Agent Customizer",
-        icon: <SmartToyRounded sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
+        icon: <SmartToyOutlined sx={{ fontSize: 20, color: "rgb(255, 255, 255, 0.8)" }} />,
         tagline: "Configuration d'agents IA • Web & outils internes",
         featured: false,
         description: [
@@ -79,7 +79,7 @@ const PROJECTS: Project[] = [
             <>Approche orientée lisibilité, performance et clarté du message.</>,
         ],
         images: ["/projects/portfolio1.png"],
-        stack: ["Next.js", "TypeScript", "MUI", "Framer Motion", "Storybook", "Vite (pour Storybook)"],
+        stack: ["Next.js", "TypeScript", "MUI", "Framer Motion", "Storybook", "Vite"],
         repoUrl: "https://github.com/KayKTA/portfolio-kay",
         storybookUrl: "https://portfolio-kay-storybook.vercel.app",
     },
@@ -98,13 +98,14 @@ export default function ProjectsSlide() {
         >
             {/* Wrapper pour donner une hauteur fixe à l'accordéon */}
             <Box
+                id="projects-accordion-wrapper"
                 sx={{
                     flex: 1, // Prend tout l'espace disponible
                     minHeight: 0, // Permet au flex child de shrink
                     maxWidth: 1400,
                     height: "100%",
                     width: "100%",
-                    px: { xs: 2 },
+                    // px: { xs: 2 },
                 }}
             >
                 {/* <ProjectAccordion projects={PROJECTS} /> */}

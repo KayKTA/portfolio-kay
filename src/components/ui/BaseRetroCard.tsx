@@ -92,7 +92,7 @@ export default function BaseRetroCard({
                         border: "4px solid",
                         borderColor: badge.color || "#AE2B1F",
                         borderRadius: 0,
-                        transform: "rotate(-12deg)",
+                        transform: "rotate(-10deg)",
                         // boxShadow: "4px 4px 0 rgba(0,0,0,0.3)",
                         textTransform: "uppercase",
                         letterSpacing: 1,

@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Stack, IconButton, Typography, Tooltip } from "@mui/material";
-import { useState } from "react";
 import WindowCard from "../ui/WindowCard";
 import { SimpleChip } from "../ui/RetroChip";
 import { ProjectImagesCarousel } from "./ProjectImagesCarousel";
