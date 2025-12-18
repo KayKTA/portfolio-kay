@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import Hero from '@/components/sections/Hero'
+import Hero from '@/components/sections/Hero2'
 import Education from '@/components/sections/Education'
 import Experience from '@/components/sections/Experiences'
 import Skills from '@/components/sections/Skills'
@@ -15,8 +15,13 @@ export default function HomePage() {
 
     const slides = useMemo(
         () => [
+            // <HeroSlide
+            //     key="hero"
+            //     onContactClick={() => setIndex(5)} // Index of Contact slide
+            // />,
             <Hero
                 key="hero"
+                onNext={() => setIndex(1)}
                 onContactClick={() => setIndex(5)} // Index of Contact slide
             />,
             <Projects key="projects" />,

@@ -144,6 +144,7 @@ export default function SlideLayout({
                     justifyContent: "center",
                     py: { xs: 3, md: 1 },
                     pb: { xs: 3, md: 1 },
+                    px: { xs: 0, md: 8 },
                     mb: { xs: 6, md: 2 },
                     // border: "3px solid",
                     // borderColor: "primary.main",
