@@ -20,11 +20,11 @@ export default function HeroSplitLayout({ onContactClick, onNext }: HeroProps) {
             sx={{
                 width: "100%",
                 height: "100%",
-                display: "flex",
+                position: "relative", // To make the right nav tab absolute within this container
             }}
         >
             {/* Main content */}
-            <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+            <Box sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
                 <SlideLayout title="Kaniba Keita" subtitle="Développeuse Fullstack • Data & IA">
                     <Container
                         maxWidth="lg"
@@ -64,7 +64,7 @@ export default function HeroSplitLayout({ onContactClick, onNext }: HeroProps) {
                                         maxWidth: 400,
                                     }}
                                 >
-                                    {/* Cadre rétro */}
+                                    {/* Retro Frame */}
                                     <Box
                                         sx={{
                                             border: "8px solid",
@@ -74,7 +74,7 @@ export default function HeroSplitLayout({ onContactClick, onNext }: HeroProps) {
                                             boxShadow: "16px 16px 0 rgba(0,0,0,0.15)",
                                         }}
                                     >
-                                        {/* Avatar / Illustration */}
+                                        {/* Avatar */}
                                         <Box
                                             sx={{
                                                 aspectRatio: "3/4",
@@ -264,7 +264,7 @@ export default function HeroSplitLayout({ onContactClick, onNext }: HeroProps) {
                 </SlideLayout>
             </Box>
 
-            {/* Right navigation tab */}
+            {/* Right navigation tab - Position absolute */}
             <Box
                 component={motion.div}
                 onClick={onNext}
@@ -274,17 +274,20 @@ export default function HeroSplitLayout({ onContactClick, onNext }: HeroProps) {
                 transition={{ duration: 0.3 }}
                 sx={{
                     display: { xs: "none", md: "flex" },
+                    position: "absolute", // Absolute within the relative container
+                    right: 0,
+                    top: 0,
                     width: 120,
                     height: "100%",
                     bgcolor: "primary.light",
                     cursor: "pointer",
-                    position: "relative",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
                     borderLeft: "6px solid",
                     borderColor: "text.primary",
                     transition: "width 0.3s ease",
+                    zIndex: 100, // Au-dessus du contenu
                     "&:hover": {
                         bgcolor: "primary.main",
                     },
